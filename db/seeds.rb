@@ -20,6 +20,6 @@ axel = User.create!({ email: 'axel@gmail.com', password: "axel1234" })
 
 remi = Coach.create!({ name: 'Rémi', specialty: body_pump })
 
-friday_lesson = Lesson.create!({ name: 'lesson1', appointment: DateTime.now.to_s(:db), coach: remi })
+friday_lesson = Lesson.create!({ name: 'lesson1', appointment: DateTime.now.to_s(:db), coach: remi, url: "https://www.youtube.com/embed/PcTKzV3-N70?start=26"})
 
 puts "Finished !"

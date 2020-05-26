@@ -1,3 +1,3 @@
-<h1>Cours par : <% @lesson.coach %></h1>
+<h1>Cours par : <%= @lesson.coach.name %></h1>
 
-<%= lesson.iframe %>
+<iframe width="560" height="315" src=<%= @lesson.url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
