@@ -15,3 +15,16 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+// dynamic banner (les mots de la page home qui défilent)
+import 'bootstrap';
+import { initMapbox } from '../plugins/init_mapbox';
+
+
+import { loadDynamicBannerText } from '../components/banner';
+
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+  initMapbox();
+});
