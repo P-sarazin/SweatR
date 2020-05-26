@@ -17,6 +17,11 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
+<!-- footer -->
+ <div class="page-container">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer", mood: @mood %>
+
   </body>
 </html>
