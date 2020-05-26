@@ -3,6 +3,12 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container {
+  text-align: center;
 }
 
 .banner h1 {
