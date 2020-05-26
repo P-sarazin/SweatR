@@ -1,0 +1,15 @@
+<div class="card-div">
+  <a href="/lessons/<%= lesson.id %>">
+    <div class="card-product">
+      <%= cl_image_tag lesson.lesson_picture %>
+      <p class="card-category-left"><%= lesson.name %></p>
+      <div class="card-infos">
+        <p><% description = lesson.lesson_description %>
+          <% if description.length >= 15 %>
+            <%= description.first(100) + "..." %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
