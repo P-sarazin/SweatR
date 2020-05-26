@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
     before_action :set_lesson, only: [:show]
 
   def index
+    @lessons = Lesson.all
   end
 
   def show

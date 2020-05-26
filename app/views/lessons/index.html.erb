@@ -1,2 +1,9 @@
-<h1>Lessons#index</h1>
-<p>Find me in app/views/lessons/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <% @lessons.each do |lesson| %>
+      <div class="col-xs-12 col-md-4">
+        <%= render "card", lesson: lesson %>
+      </div>
+    <% end %>
+  </div>
+</div>
