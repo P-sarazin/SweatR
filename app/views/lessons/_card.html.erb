@@ -1,8 +1,9 @@
 <div class="card-div">
-  <a href="/lessons/<%= lesson.id %>">
+  <div>
     <div class="card-product">
       <%= cl_image_tag lesson.lesson_picture %>
-      <p class="card-category-left"><%= lesson.name %></p>
+      <a href="#" class="card-category-top-left"><%= lesson.coach.specialty.name %></a>
+      <a href="#" class="card-category-top-right"><%= lesson.coach.name %></a>
       <div class="card-infos">
         <p><% description = lesson.lesson_description %>
           <% if description.length >= 15 %>
@@ -10,6 +11,7 @@
           <% end %>
         </p>
       </div>
+      <a href="/lessons/<%= lesson.id %>" class="card-category-bottom-right">Book</a>
     </div>
-  </a>
+  </div>
 </div>

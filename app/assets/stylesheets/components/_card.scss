@@ -5,13 +5,29 @@
   margin: 20px;
   border-radius: 15px;
   position:relative;
-  .card-category-left {
+  .card-category-top-left {
   background-color: white;
   padding: 5px;
   border-radius: 15px;
   position: absolute;
   top: 10px;
   left: 5px;
+  }
+  .card-category-top-right {
+  background-color: white;
+  padding: 5px;
+  border-radius: 15px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  }
+  .card-category-bottom-right {
+  background-color: white;
+  padding: 5px;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 76px;
+  right: 5px;
   }
   > img {
   height: 200px;
