@@ -6,9 +6,9 @@
   <div class="two-columns">
     <h3>Your next classes:</h3>
       <div class="sessions-card">
-        <% @lessons.each do |lesson| %>
+        <% @bookings.each do |booking| %>
           <div class="col-xs-12 col-md-4">
-            <%= render "card", lesson: lesson, user: lesson.user %>
+            <%= render "card", booking: booking %>
           </div>
         <% end %>
       </div>
