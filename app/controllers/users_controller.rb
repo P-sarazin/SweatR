@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
-  def show
+  def dashboard
+    @bookings = current_user.bookings
   end
 end
