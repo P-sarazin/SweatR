@@ -5,7 +5,7 @@ const loadDynamicBannerText = () => {
   if (banner) {
     new Typed('#banner-typed-text', {
       strings: ["Crossfit", "Yoga", "Bodypump", "Stretching"],
-      typeSpeed: 50,
+      typeSpeed: 160,
       loop: true
     });
   }
