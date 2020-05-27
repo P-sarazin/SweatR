@@ -2,12 +2,8 @@
   <div>
     <div class="card-product">
       <%= cl_image_tag lesson.lesson_picture %>
-      <button type="button" class="card-category-top-left" data-toggle="modal" data-target="#specialtyModal">
-        <%= lesson.coach.specialty.name %>
-      </button>
-      <button type="button" class="card-category-top-right" data-toggle="modal" data-target="#coachModal">
-        <%= lesson.coach.name %>
-      </button>
+      <a href="#" class="card-category-top-left"><%= lesson.coach.specialty.name %></a>
+      <a href="#" class="card-category-top-right"><%= lesson.coach.name %></a>
       <div class="card-infos">
         <p><% description = lesson.lesson_description %>
           <% if description.length >= 15 %>
@@ -53,3 +49,4 @@
     </div>
   </div>
 </div>
+
