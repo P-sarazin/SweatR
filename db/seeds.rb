@@ -16,7 +16,8 @@ Specialty.destroy_all
 puts "Creating database..."
 body_pump = Specialty.create!({ name: 'Body Pump' })
 
-axel = User.create!({ email: 'axel@gmail.com', password: "axel1234" })
+axel = User.create!({ email: 'axel@gmail.com', password: "axel1234", name: 'Axel'})
+pierre = User.create!({ email: 'pierre.sarazin91@yahoo.fr', password: "123456", name: 'Pierre'})
 
 remi = Coach.create!({ name: 'Rémi', specialty: body_pump })
 
