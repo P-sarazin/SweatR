@@ -33,6 +33,8 @@ puts "Creating users..."
 #user
 axel = User.create!({ email: 'axel@gmail.com', password: "axel1234", name: 'Axel'})
 pierre = User.create!({ email: 'pierre.sarazin91@yahoo.fr', password: "123456", name: 'Pierre'})
+marie = User.create!({ email: 'marie@gmail.com', password: "marie1234", name: 'Marie'})
+josephine = User.create!({ email: 'josephine@gmail.com', password: "josephine1234", name: 'Joséphine'})
 
 puts "Creating coaches..."
 
