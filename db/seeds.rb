@@ -31,10 +31,18 @@ relaxation = Specialty.create!({ name: 'relaxation' })
 puts "Creating users..."
 
 #user
-axel = User.create!({ email: 'axel@gmail.com', password: "axel1234", name: 'Axel'})
-pierre = User.create!({ email: 'pierre.sarazin91@yahoo.fr', password: "123456", name: 'Pierre'})
-marie = User.create!({ email: 'marie@gmail.com', password: "marie1234", name: 'Marie'})
-josephine = User.create!({ email: 'josephine@gmail.com', password: "josephine1234", name: 'Joséphine'})
+axel = User.create!(name: 'Axel', email: "axel@gmail.com", password: "Axel!!", avatar_picture: "https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/axel.png")
+josephine = User.create!(name: 'Joséphine', email: "josephine@gmail.com", password: "Josephine!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589896478/DAMIDHOME/Avatar/josephine.png")
+pierre = User.create!(name: 'Pierre', email: "pierre@gmail.com", password: "Pierre!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/pierre.png")
+vilouny = User.create!(name: 'Vilouny', email: "marie@gmail.com", password: "Marie!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589982035/DAMIDHOME/Avatar/vilouny.png")
+stan = User.create!(name: 'Stan', email: "stan@gmail.com", password: "Stan!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589980952/DAMIDHOME/Avatar/stan.png")
+jeanne = User.create!(name: 'Jeanne', email: "jeanne@gmail.com", password: "Jeanne!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589981742/DAMIDHOME/Avatar/jeanne.png")
+claire = User.create!(name: 'Claire', email: "claire@gmail.com", password: "Claire!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589980951/DAMIDHOME/Avatar/claire.png")
+laurence = User.create!(name: 'Laurence', email: "laurence@gmail.com", password: "Laurence!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589980952/DAMIDHOME/Avatar/laurence.png")
+alexandra = User.create!(name: 'Alexandra', email: "alexandra@gmail.com", password: "Alexandra!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590156234/DAMIDHOME/Avatar/alexandra.png")
+emile = User.create!(name: 'Emile', email: "emile@gmail.com", password: "Emile!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590156235/DAMIDHOME/Avatar/emile.png")
+coralie = User.create!(name: 'Coralie', email: "coralie@gmail.com", password: "Coralie!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590156249/DAMIDHOME/Avatar/coralie.png")
+
 
 puts "Creating coaches..."
 
