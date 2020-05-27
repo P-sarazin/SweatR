@@ -25,7 +25,7 @@ class LessonsController < ApplicationController
 
   private
 
-  def mood_params
+  def lesson_params
     params.require(:lesson).permit(:name, :appointement)
   end
 
