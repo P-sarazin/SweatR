@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2020_05_27_103657) do
     t.bigint "specialty_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "bio"
+    t.string "model_lesson"
     t.index ["specialty_id"], name: "index_coaches_on_specialty_id"
   end
 
@@ -50,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_103657) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|
