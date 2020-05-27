@@ -63,7 +63,11 @@ sixpack = Lesson.create!({ name: 'sixpack', appointment: Time.at((Time.now.to_i.
 puts "Creating bookings..."
 
 #bookings
-resa_axel_bodycombat = Booking.create!({ review_text: "", review_rating: 1, lesson: bodycombat, user: axel })
-resa_axel_bodybarre = Booking.create!({ review_text: "", review_rating: 1, lesson: bodybarre, user: axel })
+User.all.each do |user|
+  3.times do
+    lesson = Lesson.all.sample
+    Booking.create!({ review_text: "", review_rating: nil, lesson: lesson, user: user })
+  end
+end
 
 puts "Finished !"
