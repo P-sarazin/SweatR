@@ -10,6 +10,8 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 70px;
+  z-index: 10000;
 }
 
 .navbar-lewagon .navbar-collapse {

@@ -29,7 +29,8 @@ relaxation = Specialty.create!({ name: 'relaxation' })
 
 
 #user
-axel = User.create!({ email: 'axel@gmail.com', password: "axel1234" })
+axel = User.create!({ email: 'axel@gmail.com', password: "axel1234", name: 'Axel'})
+pierre = User.create!({ email: 'pierre.sarazin91@yahoo.fr', password: "123456", name: 'Pierre'})
 
 #coach
 
