@@ -1,19 +1,17 @@
+<div class="container">
+  <h1>Hello <%= current_user.name %></h1>
 
-<div class="my-container">
-  <div class="two-columns">
-    <h3>Your progress:</h3>
+  <div class="left-container">
+    <h3>Your booked session:</h3>
+    <ul>
+      <% @bookings.each do |booking| %>
+        <li><%= booking.lesson.name %> : <%= booking.lesson.appointment %></li>
+      <% end %>
+    </ul>
   </div>
-  <div class="two-columns">
-    <h3>Your next classes:</h3>
-      <div class="sessions-card">
-        <% @bookings.each do |booking| %>
-          <div class="col-xs-12 col-md-4">
-            <%= render "card", booking: booking %>
-          </div>
-        <% end %>
-      </div>
-
-
+  <div class="right-container">
+    <h3>Your performances</h3>
+    <h4>Calories = <%= (rand() * 16000).round %></h4>
+    </ul>
   </div>
 </div>
-
