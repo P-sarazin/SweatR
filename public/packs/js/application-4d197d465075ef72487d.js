@@ -140,7 +140,7 @@ var loadDynamicBannerText = function loadDynamicBannerText() {
   if (banner) {
     new typed_js__WEBPACK_IMPORTED_MODULE_0___default.a('#banner-typed-text', {
       strings: ["Crossfit", "Yoga", "Bodypump", "Stretching"],
-      typeSpeed: 50,
+      typeSpeed: 160,
       loop: true
     });
   }
@@ -20956,4 +20956,4 @@ module.exports = g;
 /***/ })
 
 /******/ });
-//# sourceMappingURL=application-fc7c27af4ef7e44bba6e.js.map
+//# sourceMappingURL=application-4d197d465075ef72487d.js.map
