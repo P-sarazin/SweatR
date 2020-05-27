@@ -38,7 +38,7 @@ puts "Creating coaches..."
 
 #coach
 remi = Coach.create!({ name: 'Rémi', specialty: hiit })
-jerem = Coach.create!({ name: 'jerem', specialty: specifictraining })
+jerem = Coach.create!({ name: 'Jérem', specialty: specifictraining })
 lola = Coach.create!({ name: 'Lola', specialty: dance })
 coralie = Coach.create!({ name: 'Coralie', specialty: relaxation })
 
