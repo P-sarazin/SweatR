@@ -5,17 +5,20 @@
   <div class="bottom-left-container">
     <h3>Your booked session:</h3>
     <ul>
-      <% @bookings.each do |booking| %>
-        <li><%= booking.lesson.name %> :
+      <% @bookings.sort_by { |booking| booking.lesson.appointment }.each do |booking| %>
+        <li class="lesson-list">
+          <span><%= booking.lesson.name %> :
           <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
-            <p>Today at <%= (9..20).to_a.sample %>h00</p>
+            Today at <%= (9..20).to_a.sample %>h00
           <% else %>
-            <p>Next <%= booking.lesson.appointment.strftime('%A') %> at <%= (9..20).to_a.sample %>h00</p>
+            Next <%= booking.lesson.appointment.strftime('%A') %> at <%= (9..20).to_a.sample %>h00
           <% end %>
+          </span>
+          <button disabled>Soon</button>
         </li>
       <% end %>
     </ul>
-    <button href="#">Book another session</button>
+    <button href="/lessons">Book another session</button>
   </div>
   <div class="bottom-right-container">
     <h3>Your performances</h3>
