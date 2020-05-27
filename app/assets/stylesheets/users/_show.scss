@@ -1,8 +1,18 @@
-.two-columns {
-  padding: 15px;
-  background-color: white;
-  padding: 0px;
-  flex-grow: 1;
+.top-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding-top: 22px;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-around;
+  ul {
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
