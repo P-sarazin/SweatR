@@ -10,9 +10,9 @@
       </button>
       <div class="card-infos">
         <% if lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
-          <p>Today at <%= booking.lesson.appointment.strftime('%H') %>H00</p>
+          <p>Today at <%= lesson.appointment.strftime('%H') %>H00</p>
         <% else %>
-          <p>Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</p>
+          <p>Next <%= lesson.appointment.strftime('%A') %> at <%= lesson.appointment.strftime('%H') %>H00</p>
         <% end %>
       </div>
       <% if @user %>
