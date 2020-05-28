@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     # @booking = Booking.new(booking_params)
     @booking = Booking.new(user_id: params[:user_id], lesson_id: params[:lesson_id])
     @booking.save
-    redirect_to user_path(params[:user_id]), notice: 'This lesson has been successfully reserved.'
+    redirect_to user_dashboard_path(params[:user_id]), notice: 'This lesson has been successfully reserved.'
   end
 
   def update
