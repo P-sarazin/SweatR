@@ -4,6 +4,9 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    if current_user
+      @user = current_user
+    end
   end
 
   def new

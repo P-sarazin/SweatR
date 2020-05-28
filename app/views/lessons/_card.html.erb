@@ -15,7 +15,11 @@
           <p>Next <%= lesson.appointment.strftime('%A') %> at <%= (9..20).to_a.sample %>h00</p>
         <% end %>
       </div>
-      <a href="/lessons/<%= lesson.id %>" class="card-category-bottom-right">Book</a>
+      <% if @user %>
+        <%= link_to "Book", lesson_bookings_path(user_id: @user, lesson_id: lesson.id), method: :post, class: "card-category-bottom-right" %>
+      <% else %>
+        <p>Connectez-vous pour pouvoir réserver une séance.</p>
+      <% end %>
     </div>
   </div>
 </div>
