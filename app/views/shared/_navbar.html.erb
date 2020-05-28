@@ -9,9 +9,15 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <!-- bouton Lessons: -->
       <li class="nav-item ">
         <a class="nav-link" href="/lessons">Lessons</a>
       </li>
+      <!-- bouton Coaches: -->
+      <li class="nav-item ">
+        <a class="nav-link" href="/lessons">Coaches</a>
+      </li>
+      <!-- bouton Avatar: -->
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag current_user.avatar_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
