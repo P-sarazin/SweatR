@@ -15,7 +15,12 @@
           <% end %>
         </p>
       </div>
-      <a href="/lessons/<%= lesson.id %>" class="card-category-bottom-right">Book</a>
+      <% if @user %>
+        <%= link_to "Book", user_bookings_path(@user, lesson_id: lesson.id), method: :post, class: "card-category-bottom-right" %>
+      <% else %>
+        <p>Connectez-vous pour pouvoir réserver une séance.</p>
+        <!-- A toi de créer le bouton pour aller vers le login -->
+      <% end %>
     </div>
   </div>
 </div>
