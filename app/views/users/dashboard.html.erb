@@ -14,15 +14,18 @@
           <li class="lesson-list">
             <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
               <span><%= booking.lesson.name %> : Today at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
-              <button href="/lessons/<%= booking.lesson.id %>"class="btn-ghost lesson-join-button">Join</button>
+              <div>
+                <a href="/lessons/<%= booking.lesson.id %>" class="btn-ghost lesson-join-button">Join</a>
             <% else %>
               <span><%= booking.lesson.name %> : Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
-              <button class="btn-ghost lesson-join-button" disabled>Soon</button>
+              <div>
+                <a class="btn-ghost lesson-soon-button" disabled>Soon</a>
             <% end %>
             <%= link_to '❌',
             lesson_booking_path(booking.lesson, booking),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+            </div>
           </li>
         <% end %>
       <% end %>
