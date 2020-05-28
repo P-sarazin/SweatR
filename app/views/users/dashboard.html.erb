@@ -6,16 +6,25 @@
     <h3>Your booked session:</h3>
     <ul>
       <% @bookings.sort_by { |booking| booking.lesson.appointment }.each do |booking| %>
-        <li class="lesson-list" <%= 'hidden' unless booking.lesson.appointment > Time.now %>>
-          <span><%= booking.lesson.name %> :
-          <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
-            Today at <%= (9..20).to_a.sample %>h00
-          <% else %>
-            Next <%= booking.lesson.appointment.strftime('%A') %> at <%= (9..20).to_a.sample %>h00
-          <% end %>
-          </span>
-          <button class="btn-ghost lesson-join-button" disabled>Soon</button>
-        </li>
+        <% if booking.lesson.appointment < Time.now %>
+          <li class="lesson-list" hidden>
+            <span><%= booking.lesson.name %> : <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00</span>
+          </li>
+        <% else %>
+          <li class="lesson-list">
+            <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
+              <span><%= booking.lesson.name %> : Today at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
+              <button href="/lessons/<%= booking.lesson.id %>"class="btn-ghost lesson-join-button">Join</button>
+            <% else %>
+              <span><%= booking.lesson.name %> : Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
+              <button class="btn-ghost lesson-join-button" disabled>Soon</button>
+            <% end %>
+            <%= link_to '❌',
+            lesson_booking_path(booking.lesson, booking),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
     <a class="btn-flat lesson-book" role="button" href="/lessons">Book another session</a>
