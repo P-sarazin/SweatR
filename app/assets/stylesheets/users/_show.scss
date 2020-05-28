@@ -1,12 +1,14 @@
 .top-container {
   display: flex;
   justify-content: center;
-  padding-top: 22px;
+  padding: 22px;
 }
 
 .bottom-container {
   display: flex;
   justify-content: space-around;
+  background-color: white;
+  padding: 36px;
   ul {
     padding: 0;
   }
@@ -15,4 +17,14 @@
     align-items: center;
     justify-content: space-between;
   }
+}
+
+.lesson-join-button {
+  opacity: 1;
+}
+
+.lesson-book {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
 }
