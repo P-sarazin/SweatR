@@ -6,7 +6,7 @@
     <h3>Your booked session:</h3>
     <ul>
       <% @bookings.sort_by { |booking| booking.lesson.appointment }.each do |booking| %>
-        <li class="lesson-list">
+        <li class="lesson-list" <%= 'hidden' unless booking.lesson.appointment > Time.now %>>
           <span><%= booking.lesson.name %> :
           <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
             Today at <%= (9..20).to_a.sample %>h00
@@ -22,6 +22,10 @@
   </div>
   <div class="bottom-right-container">
     <h3>Your performances</h3>
-    <h4>Calories = <%= (rand() * 16000).round %></h4>
+    <% sum_calories = 0 %>
+    <% @bookings.each do |booking| %>
+      <% sum_calories += booking.lesson.average_calories %>
+    <% end %>
+    <h4>Calories = <%= sum_calories %></h4>
   </div>
 </div>
