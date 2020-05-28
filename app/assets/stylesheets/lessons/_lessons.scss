@@ -1,0 +1,32 @@
+.modal-title {
+  text-align: center;
+}
+
+.modal-close {
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: -5px;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  outline: 0;
+}
+
+.modal-body h3 {
+  text-align: center
+}
+
+.modal-picture img {
+  max-inline-size: -webkit-fill-available;
+}
