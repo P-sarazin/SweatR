@@ -29,7 +29,7 @@
     <div class="modal-content">
       <div class="modal-body">
         <span class="modal-close" data-dismiss="modal">&times;</span>
-        <h3><strong> <%= lesson.name.capitalize %> en deux mots :</strong></h3>
+        <h3><strong> <%= lesson.name.capitalize %> </strong></h3>
           <div class="modal-picture">
             <%= cl_image_tag lesson.lesson_picture %>
           </div>
@@ -46,14 +46,14 @@
     <div class="modal-content">
       <div class="modal-body">
         <span class="modal-close" data-dismiss="modal">&times;</span>
-        <h3><strong> Qui est <%= lesson.coach.name.capitalize %> :</strong></h3>
+        <h3><strong> <%= lesson.coach.name.capitalize %> </strong></h3>
         <div class="modal-description">
           <div class="modal-picture">
             <%= cl_image_tag lesson.lesson_picture %>
           </div>
-          <h5>Son expérience de coach.</h5>
+          <h5><strong>Son expérience de coach</strong></h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum assumenda nihil facere veniam commodi fugit, veritatis voluptate sed quaerat nisi. Quod dolores quasi voluptate ipsum, officiis autem cumque necessitatibus quia.</p>
-          <h5>Sa séance typique.</h5>
+          <h5><strong>Sa séance typique</strong></h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt consectetur eius corporis veniam repellendus quod et, ipsum, adipisci accusamus, eveniet doloremque. Necessitatibus ipsum minus, illum enim porro a, provident non.</p>
         </div>
       </div>
