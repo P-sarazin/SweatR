@@ -9,13 +9,17 @@
         <%= lesson.coach.name %>
       </button>
       <div class="card-infos">
-        <p><% description = lesson.lesson_description %>
-          <% if description.length >= 15 %>
-            <%= description.first(100) + "..." %>
-          <% end %>
-        </p>
+        <% if lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
+          <p>Today at <%= (9..20).to_a.sample %>h00</p>
+        <% else %>
+          <p>Next <%= lesson.appointment.strftime('%A') %> at <%= (9..20).to_a.sample %>h00</p>
+        <% end %>
       </div>
-      <a href="/lessons/<%= lesson.id %>" class="card-category-bottom-right">Book</a>
+      <% if @user %>
+        <%= link_to "Book", lesson_bookings_path(user_id: @user, lesson_id: lesson.id), method: :post, class: "card-category-bottom-right" %>
+      <% else %>
+        <p>Connectez-vous pour pouvoir réserver une séance.</p>
+      <% end %>
     </div>
   </div>
 </div>

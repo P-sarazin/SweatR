@@ -1,12 +1,18 @@
-.my-container {
+.top-container {
   display: flex;
+  justify-content: center;
+  padding-top: 22px;
 }
 
-.two-columns {
-  padding: 15px;
-  background-color: white;
-  padding: 0px;
-  flex-grow: 1;
+.bottom-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  ul {
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

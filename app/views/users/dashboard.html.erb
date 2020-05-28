@@ -1,19 +1,27 @@
-
-<div class="my-container">
-  <div class="two-columns">
-    <h3>Your progress:</h3>
+<div class="top-container">
+  <h1>Hello <%= current_user.name %></h1>
+</div>
+<div class="bottom-container">
+  <div class="bottom-left-container">
+    <h3>Your booked session:</h3>
+    <ul>
+      <% @bookings.sort_by { |booking| booking.lesson.appointment }.each do |booking| %>
+        <li class="lesson-list">
+          <span><%= booking.lesson.name %> :
+          <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
+            Today at <%= (9..20).to_a.sample %>h00
+          <% else %>
+            Next <%= booking.lesson.appointment.strftime('%A') %> at <%= (9..20).to_a.sample %>h00
+          <% end %>
+          </span>
+          <button disabled>Soon</button>
+        </li>
+      <% end %>
+    </ul>
+    <a class="btn-ghost" role="button" href="/lessons">Book another session</a>
   </div>
-  <div class="two-columns">
-    <h3>Your next classes:</h3>
-      <div class="sessions-card">
-        <% @bookings.each do |booking| %>
-          <div class="col-xs-12 col-md-4">
-            <%= render "card", booking: booking %>
-          </div>
-        <% end %>
-      </div>
-
-
+  <div class="bottom-right-container">
+    <h3>Your performances</h3>
+    <h4>Calories = <%= (rand() * 16000).round %></h4>
   </div>
 </div>
-

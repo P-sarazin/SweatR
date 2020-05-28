@@ -5,14 +5,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.lesson_id = params[lesson_id]
-    @booking.user_id = current_user.id
-    if @booking.save
-      redirect_to lesson_path(@booking.lesson), notice: 'Lesson was successfully reserved.'
-    else
-      render :new
-    end
+    # @booking = Booking.new(booking_params)
+    @booking = Booking.new(user_id: params[:user_id], lesson_id: params[:lesson_id])
+    @booking.save
+    redirect_to user_dashboard_path(params[:user_id]), notice: 'This lesson has been successfully reserved.'
   end
 
   def update
@@ -21,6 +17,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :lesson_id, :start_date, :end_date)
+    params.require(:booking).permit(:user_id, :lesson_id)
   end
 end

@@ -4,6 +4,9 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    if current_user
+      @user = current_user
+    end
   end
 
   def new
@@ -25,7 +28,7 @@ class LessonsController < ApplicationController
 
   private
 
-  def mood_params
+  def lesson_params
     params.require(:lesson).permit(:name, :appointement)
   end
 
