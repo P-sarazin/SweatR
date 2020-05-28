@@ -14,11 +14,11 @@
             Next <%= booking.lesson.appointment.strftime('%A') %> at <%= (9..20).to_a.sample %>h00
           <% end %>
           </span>
-          <button disabled>Soon</button>
+          <button class="btn-ghost lesson-join-button" disabled>Soon</button>
         </li>
       <% end %>
     </ul>
-    <a class="btn-ghost" role="button" href="/lessons">Book another session</a>
+    <a class="btn-flat lesson-book" role="button" href="/lessons">Book another session</a>
   </div>
   <div class="bottom-right-container">
     <h3>Your performances</h3>
