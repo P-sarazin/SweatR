@@ -3,16 +3,16 @@
     <div class="card-product">
       <%= cl_image_tag lesson.lesson_picture %>
       <button type="button" class="card-category-top-left" data-toggle="modal" data-target="#LessonModal<%= lesson.id %>">
-        <%= lesson.name %>
+        <%= lesson.name.capitalize %>
       </button>
       <button type="button" class="card-category-top-right" data-toggle="modal" data-target="#CoachModal<%= lesson.coach.id %>">
-        <%= lesson.coach.name %>
+        <%= lesson.coach.name.capitalize %>
       </button>
       <div class="card-infos">
         <% if lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
-          <p>Today at <%= (9..20).to_a.sample %>h00</p>
+          <p>Today at <%= lesson.appointment.strftime('%H') %>H00</p>
         <% else %>
-          <p>Next <%= lesson.appointment.strftime('%A') %> at <%= (9..20).to_a.sample %>h00</p>
+          <p>Next <%= lesson.appointment.strftime('%A') %> at <%= lesson.appointment.strftime('%H') %>H00</p>
         <% end %>
       </div>
       <% if current_user %>
@@ -27,16 +27,15 @@
 <div class="modal fade" id="LessonModal<%= lesson.id %>" tabindex="-1" role="dialog" aria-labelledby="LessonModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="LessonModalLabel"><%= lesson.coach.specialty.name %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
-        <!-- <h3>Description du cours</h3> -->
-        <%= lesson.lesson_description %>
-        <%# end %>
+        <span class="modal-close" data-dismiss="modal">&times;</span>
+        <h3><strong> <%= lesson.name.capitalize %> en deux mots :</strong></h3>
+          <div class="modal-picture">
+            <%= cl_image_tag lesson.lesson_picture %>
+          </div>
+          <div class="modal-description">
+            <%= lesson.lesson_description %>
+          </div>
       </div>
     </div>
   </div>
@@ -45,15 +44,18 @@
 <div class="modal fade" id="CoachModal<%= lesson.coach.id %>" tabindex="-1" role="dialog" aria-labelledby="CoachModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="CoachModalLabel"><%= lesson.coach.name %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
-        <%= lesson.coach.name %>
-        <%= lesson.coach.name %>
+        <span class="modal-close" data-dismiss="modal">&times;</span>
+        <h3><strong> Qui est <%= lesson.coach.name.capitalize %> :</strong></h3>
+        <div class="modal-description">
+          <div class="modal-picture">
+            <%= cl_image_tag lesson.lesson_picture %>
+          </div>
+          <h5>Son expérience de coach.</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum assumenda nihil facere veniam commodi fugit, veritatis voluptate sed quaerat nisi. Quod dolores quasi voluptate ipsum, officiis autem cumque necessitatibus quia.</p>
+          <h5>Sa séance typique.</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt consectetur eius corporis veniam repellendus quod et, ipsum, adipisci accusamus, eveniet doloremque. Necessitatibus ipsum minus, illum enim porro a, provident non.</p>
+        </div>
       </div>
     </div>
   </div>

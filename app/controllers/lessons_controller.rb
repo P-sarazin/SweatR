@@ -4,6 +4,11 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    t = Time.now
+    @lessons = Lesson.where("appointment > ?", t)
+    if current_user
+      @user = current_user
+    end
   end
 
   def new
