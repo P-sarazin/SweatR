@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def new
   end
 
@@ -17,6 +19,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:user_id, :lesson_id)
   end
-
-
 end
