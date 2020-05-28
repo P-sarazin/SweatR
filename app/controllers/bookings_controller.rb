@@ -6,12 +6,18 @@ class BookingsController < ApplicationController
 
   def create
     # @booking = Booking.new(booking_params)
-    @booking = Booking.new(user_id: params[:user_id], lesson_id: params[:lesson_id])
+    @booking = Booking.new(user_id: current_user.id, lesson_id: params[:lesson_id])
     @booking.save
-    redirect_to user_dashboard_path(params[:user_id]), notice: 'This lesson has been successfully reserved.'
+    redirect_to user_dashboard_path(user_id: current_user.id), notice: 'This lesson has been successfully reserved.'
   end
 
   def update
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private
