@@ -17,7 +17,7 @@ puts "Creating specialties..."
 
 #specialties
 #HIIT/Crossfit (High Intensity Interval Training)
-hiit = Specialty.create!({ name: 'HIIT' })
+hiit = Specialty.create!({ name: 'High Intensity Interval Training' })
 
 #zones localisées
 specifictraining = Specialty.create!({ name: 'Specific Training' })
@@ -47,22 +47,22 @@ coralie = User.create!(name: 'Coralie', email: "coralie@gmail.com", password: "C
 puts "Creating coaches..."
 
 #coach
-remi = Coach.create!({ name: 'Rémi', specialty: hiit, bio: "Remi is a bodybuilding and physique master. His aesthetics are unprecedented! Greg is also a fulfilling coach who has helped so many on their journey to reaching their ideal physique.", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655559/SweatR/coaches/prof_4_mxc0as.jpg" })
-david = Coach.create!({ name: 'David', specialty: hiit, bio:"David is one of the best trainers out there – even celebs trust this guy with their fitness", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655560/SweatR/coaches/prof_1_dcypsj.jpg" })
-jp = Coach.create!({ name: 'JP', specialty: hiit, bio:"jp is a bodybuilding guru who is also an entrepreneur, motivational speaker, and cover model." ,avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655560/SweatR/coaches/prof_6_kulmre.jpg"})
+remi = Coach.create!({ name: 'Rémi', specialty: hiit, bio: "Remi is a bodybuilding and physique master. His aesthetics are unprecedented! He is also a fulfilling coach who has helped so many on their journey to reaching their ideal physique.", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655559/SweatR/coaches/prof_4_mxc0as.jpg" })
+david = Coach.create!({ name: 'David', specialty: hiit, bio:"David is a software engineer and bodybuilder and also one of the best trainers out there – even celebs trust this guy with their fitness. His success stories are unbeatable, as you can see the numerous transformations, all credited to his online fitness plans.", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655560/SweatR/coaches/prof_1_dcypsj.jpg" })
+jp = Coach.create!({ name: 'JP', specialty: hiit, bio:"jp is a bodybuilding guru who is also an entrepreneur, motivational speaker, and cover model. From personalized training plans, to food plans, to supplement guides, to online support, he has got you covered on your fitness journey" ,avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655560/SweatR/coaches/prof_6_kulmre.jpg"})
 coach_hiit = [remi, david, jp]
 
 lola = Coach.create!({ name: 'Lola', specialty: dance, bio:"Lola is a professional dancer with a side passion for fitness. She is worth a follow for daily fitness and nutrition motivation, as well as specific workouts to get her ripped physique. She has proven that any goal is attainable if you chase after it.", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655559/SweatR/coaches/prof_5_yapvl7.jpg"})
-clem = Coach.create!({ name: 'Clem', specialty: dance, bio:"clem's dedication to his clients is what makes him hands down the trust-worthiest trainer/coach we’ve seen yet. ", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655560/SweatR/coaches/prof_1_dcypsj.jpg" })
+clem = Coach.create!({ name: 'Clem', specialty: dance, bio:"clem's dedication to her clients is what makes her hands down the trust-worthiest trainer/coach we’ve seen yet.  Her enjoyable and effective workouts are what help her and so many others stay in great shape!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590679576/SweatR/coaches/prof_9_edemtt.jpg" })
 coach_dance = [lola, clem]
 
 coralie = Coach.create!({ name: 'Coralie', specialty: relaxation, bio: "Coralie is a qualified Yoga Alliance teacher which passion is to make people happier and healthier by introducing them to meditation, yoga and healthy nutrition,as well as training advice and instructions to healthy recipes.", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655559/SweatR/coaches/prof_8_lbhobx.jpg"})
 loic = Coach.create!({ name: 'loic', specialty: relaxation, bio:" loic has programs for everyone, regardless of gender, size, training goals, or targets. From personalized training plans, to food plans, to supplement guides, to online support, he has got you covered on your fitness journey" , avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655559/SweatR/coaches/prof_7_gsz0pf.jpg"})
-michel = Coach.create!({ name: 'Michel', specialty: relaxation, bio:"Michel is a software engineer and bodybuilder. His attention to detail in the books has transitioned flawlessly into the weight room. If you are looking to clean up your diet and develop to that next level, then he is the guy to take you there." , avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655560/SweatR/coaches/prof_1_dcypsj.jpg"})
-coach_relaxation = [coralie, loic, michel]
+michelle = Coach.create!({ name: 'Michelle', specialty: relaxation, bio:"Michelle truly understands where you are coming from, her attention to detail in the books has transitioned flawlessly into the fitness room. If you are looking to clean up your diet and develop to that next level, then she is the right person to take you there." , avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590679576/SweatR/coaches/prof_10_jrnuno.jpg"})
+coach_relaxation = [coralie, loic, michelle]
 
 jerem = Coach.create!({ name: 'Jérem', specialty: specifictraining, bio:"Jerem's trainings are game changing and can really help you optimize part of your performance in the shoulders department. is an in-person and online trainer who is here to make your life better.", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655559/SweatR/coaches/prof_2_mjyhoq.jpg" })
-thanh = Coach.create!({ name: 'thanh', specialty: specifictraining, bio: "For thanh empowering women and helping them transform their minds and bodies is her biggest goal. With over two decades of experience in the fitness industry, Angie has accomplished quite a bit",avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655559/SweatR/coaches/prof_3_asnbe1.jpg"})
+thanh = Coach.create!({ name: 'thanh', specialty: specifictraining, bio: "For thanh empowering women and helping them transform their minds and bodies is her biggest goal. With over two decades of experience in the fitness industry, she has accomplished quite a bit",avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1590655559/SweatR/coaches/prof_3_asnbe1.jpg"})
 coach_specifictraining = [jerem, thanh]
 
 
