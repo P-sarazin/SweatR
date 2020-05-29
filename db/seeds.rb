@@ -34,7 +34,7 @@ puts "Creating users..."
 axel = User.create!(name: 'Axel', email: "axel@gmail.com", password: "Axel!!", avatar_picture: "https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/axel.png")
 josephine = User.create!(name: 'Joséphine', email: "josephine@gmail.com", password: "Josephine!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589896478/DAMIDHOME/Avatar/josephine.png")
 pierre = User.create!(name: 'Pierre', email: "pierre@gmail.com", password: "Pierre!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/pierre.png")
-vilouny = User.create!(name: 'Vilouny', email: "marie@gmail.com", password: "Marie!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589982035/DAMIDHOME/Avatar/vilouny.png")
+marie = User.create!(name: 'Marie', email: "marie@gmail.com", password: "Marie!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/marie.png")
 stan = User.create!(name: 'Stan', email: "stan@gmail.com", password: "Stan!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589980952/DAMIDHOME/Avatar/stan.png")
 jeanne = User.create!(name: 'Jeanne', email: "jeanne@gmail.com", password: "Jeanne!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589981742/DAMIDHOME/Avatar/jeanne.png")
 claire = User.create!(name: 'Claire', email: "claire@gmail.com", password: "Claire!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589980951/DAMIDHOME/Avatar/claire.png")
