@@ -23,6 +23,5 @@ const initPlyr = () => {
     });
   })
 };
-
 export { initPlyr };
 
