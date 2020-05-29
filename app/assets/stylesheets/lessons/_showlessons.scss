@@ -4,11 +4,6 @@
 
 .lesson-show {
   text-align: center;
-  background-color: #f8b595;
-}
-
-.lesson-show h1 {
-  color: olive;
 }
 
 .lesson-show h3 {
@@ -16,15 +11,37 @@
 }
 
 .classes-description {
-  background-color: #f67280;
-  color: darkblue;
+  color: black;
+  padding: 17px;
 }
 
 #player {
   height: 670px;
-  width: 1200px;
+  width: 1180px;
+  margin: -15px;
 }
 
 .show-container {
   display: flex !important;
+}
+
+.btn-dashboard a {
+  color: black;
+  box-shadow: 10px;
+}
+.plyr__video-embed {
+  padding-bottom: 56.25%;
+  margin: 15px;
+}
+
+#video-timer {
+  position: absolute;
+  background: $gray;
+  right: 0px;
+  top: 0px;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+  padding-bottom: 10px;
+  color: white;
 }

@@ -5,8 +5,7 @@
       <div class="row">
         <div class="col-12">
           <div class="card-slick">
-            <% tests = @lessons.joins(:coach).where("coaches.specialty_id = ?", specialty.id) %>
-            <% tests.each do |lesson| %>
+            <% @lessons.joins(:coach).where("coaches.specialty_id = ?", specialty.id).each do |lesson| %>
                   <%= render "card", lesson: lesson %>
             <% end %>
           </div>
@@ -16,6 +15,44 @@
   <% end %>
 </div>
 
+<% @lessons.each do |lesson| %>
+  <div class="modal fade" id="LessonModal<%= lesson.id %>Center" tabindex="-1" role="dialog" aria-labelledby="LessonModalLabelCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <span class="modal-close" data-dismiss="modal">&times;</span>
+            <h3><strong> <%= lesson.name.capitalize %> </strong></h3>
+              <div class="modal-picture">
+                <%= cl_image_tag lesson.lesson_picture %>
+              </div>
+              <div class="modal-description">
+                <%= lesson.lesson_description %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-
+    <div class="modal fade" id="CoachModal<%= lesson.coach.id %>Center" tabindex="-1" role="dialog" aria-labelledby="CoachModalLabelCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <span class="modal-close" data-dismiss="modal">&times;</span>
+            <h3><strong> <%= lesson.coach.name.capitalize %> </strong></h3>
+            <div class="modal-description">
+              <div class="modal-picture-coach">
+                <%= cl_image_tag lesson.coach.avatar_picture %>
+              </div>
+              <div class="modal-description">
+              <h5><strong>Son expérience de coach</strong></h5>
+              <p><%= lesson.coach.bio %></p>
+              <h5><strong>Sa séance typique</strong></h5>
+              <p><%= lesson.coach.model_lesson %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

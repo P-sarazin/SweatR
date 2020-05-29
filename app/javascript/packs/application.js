@@ -20,16 +20,16 @@ require("channels")
 // dynamic banner (les mots de la page home qui défilent)
 import 'bootstrap';
 import {initPlyr} from '../plugins/init_plyr';
-import {countDownDate} from '../plugins/init_plyr';
 import {initSlick} from '../plugins/init_slick';
 
 import { loadDynamicBannerText } from '../components/banner';
 import { showLesson } from '../components/show_lesson'
+import { bookMouseover } from '../components/book_mouseover';
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   initPlyr();
-  // countDownDate();
   initSlick();
   showLesson();
+  bookMouseover();
 });
