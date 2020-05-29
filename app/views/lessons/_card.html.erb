@@ -2,10 +2,10 @@
   <div class="card-lesson">
     <div class="card-product">
       <%= cl_image_tag lesson.lesson_picture %>
-      <button type="button" class="card-category-top-left" data-toggle="modal" data-target="#LessonModal<%= lesson.id %>">
+      <button type="button" class="card-category-top-left" data-toggle="modal" data-target="#LessonModal<%= lesson.id %>Center">
         <%= lesson.name.capitalize %>
       </button>
-      <button type="button" class="card-category-top-right" data-toggle="modal" data-target="#CoachModal<%= lesson.coach.id %>">
+      <button type="button" class="card-category-top-right" data-toggle="modal" data-target="#CoachModal<%= lesson.coach.id %>Center">
         <%= lesson.coach.name.capitalize %>
       </button>
       <div class="card-infos">
@@ -22,44 +22,4 @@
       <% end %>
      </div>
   </div>
-  <div class="modal fade" id="LessonModal<%= lesson.id %>" tabindex="-1" role="dialog" aria-labelledby="LessonModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <span class="modal-close" data-dismiss="modal">&times;</span>
-          <h3><strong> <%= lesson.name.capitalize %> </strong></h3>
-            <div class="modal-picture">
-              <%= cl_image_tag lesson.lesson_picture %>
-            </div>
-            <div class="modal-description">
-              <%= lesson.lesson_description %>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="CoachModal<%= lesson.coach.id %>" tabindex="-1" role="dialog" aria-labelledby="CoachModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <span class="modal-close" data-dismiss="modal">&times;</span>
-          <h3><strong> <%= lesson.coach.name.capitalize %> </strong></h3>
-          <div class="modal-description">
-            <div class="modal-picture-coach">
-              <%= cl_image_tag lesson.coach.avatar_picture %>
-            </div>
-            <div class="modal-description">
-            <h5><strong>Son expérience de coach</strong></h5>
-            <p> <%= lesson.coach.bio %> </p>
-            <h5><strong>Sa séance typique</strong></h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt consectetur eius corporis veniam repellendus quod et, ipsum, adipisci accusamus, eveniet doloremque. Necessitatibus ipsum minus, illum enim porro a, provident non.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-
-
