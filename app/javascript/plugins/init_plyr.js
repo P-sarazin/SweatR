@@ -1,27 +1,28 @@
 import Plyr from 'plyr';
 import 'plyr/dist/plyr.css';
+const computeSecond = (seconde) => {
+  if (seconde < 10) {
+    return `0${seconde}`;
+  } else {
+    return `${seconde}`;
+  };
+};
 const initPlyr = () => {
   const player = new Plyr('#player');
+  player.on('ready', event => {
+    const duration = player.duration;
+    console.log(duration);
+    player.on('timeupdate', event => {
+      const timeleft = player.duration - player.currentTime;
+      const seconde = Math.floor(timeleft % 60);
+      const minute = Math.floor(timeleft / 60);
+      const timer = `${minute}:${computeSecond(seconde)}`;
+      const videoTimer = document.getElementById("video-timer");
+      videoTimer.innerHTML = timer;
+      // calculer tps restant en min et s et afficher
+    });
+  })
 };
 
-const countDownDate = new Date("May 29, 2020 15:37:25").getTime();
-
-const x = setInterval(function() {
-const now = new Date().getTime();
-
-const distance = countDownDate - now;
-
-const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-document.getElementById("Timer").innerHTML = hours + "h "
-+ minutes + "m " + seconds + "s ";
-
-if (distance < 0) {
-  clearInterval(x);
-  document.getElementById("Timer").innerHTML = "WELL DONE!!";
-}});
-
 export { initPlyr };
-export { countDownDate }
+

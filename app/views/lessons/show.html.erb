@@ -1,6 +1,4 @@
 <div class="lesson-show">
-  <h1>Welcome to <%= @lesson.coach.name %>'s lesson! </h1>
-  <h3>LET'S GO💪</h3>
   <div class="show-container">
     <div class="plyr__video-embed" id="player">
       <iframe
@@ -9,30 +7,34 @@
         allowtransparency
         allow="autoplay"
       ></iframe>
+      <div class="timer" id="video-timer">
+
+      </div>
     </div>
     <div class="classes-description">
       <h3><strong>Today's workout</strong></h3>
         <div class="description-container">
           <h4>Warm up - x2 🚴‍♂️</h4>
-            <p>Hip extensions: 10 reps</p>
-            <p>Hip rotations: 10 reps each leg</p>
-          <h5>Repetition 1 💪 - x4</h5>
-            <p>30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
-            <p>30sec rest</p>
-            <p>Burpees x5</p>
-          <h5>Repetition 2 🏋️ - x3</h5>
-            <p>50sec Squats - 10sec Rest</p>
-            <p>50sec Push up - 10sec Rest</p>
-            <p>50sec Mountain climbers - 10sec Rest</p>
-          <h5>Repetition 3 🧘 - x2</h5>
-            <p>Sit up x20</p>
-            <p>1min Body core</p>
-            <p>30sec Side Plank each side</p>
+            <p>-Hip extensions: 10 reps</p>
+            <p>-Hip rotations: 10 reps each leg</p>
+          <h4>Repetition 1 💪 - x4</h4>
+            <p>-30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
+            <p>-5x Burpees</p>
+            <p>-30sec rest</p>
+          <h4>Repetition 2 🏋️ - x3</h4>
+            <p>-50sec Squats - 10sec Rest</p>
+            <p>-50sec Push up - 10sec Rest</p>
+            <p>-50sec Mountain climbers - 10sec Rest</p>
+          <h4>Repetition 3 🧘 - x2</h4>
+            <p>-20x Sit up</p>
+            <p>-1min Body core</p>
+            <p>-30sec Side Plank each side</p>
           <h4>Congratulations!</h4>
         </div>
-          <a class="btn btn-ghost retour" href="/users/user_id/dashboard<%= @user %>">Dashboard</a>
     </div>
   </div>
-  <p id="Timer"></p>
+  <div class="btn-dashboard">
+    <a class="btn btn-ghost retour" href="/users/user_id/dashboard<%= @user %>">Back to Dashboard</a>
+  </div>
 </div>
 

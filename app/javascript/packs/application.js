@@ -28,5 +28,4 @@ import { loadDynamicBannerText } from '../components/banner';
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   initPlyr();
-  countDownDate();
 });
