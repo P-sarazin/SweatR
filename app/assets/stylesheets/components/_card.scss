@@ -16,14 +16,9 @@
   border: none;
   }
   .card-category-top-right {
-  background-color: white;
-  padding: 5px;
-  border-radius: 15px;
   position: absolute;
-  top: 8px;
-  right: 5px;
-  opacity: 0.7;
-  border: none;
+  top: 0px;
+  right: 2px;
   }
   .card-category-bottom-right {
   background-color: $salmon;
@@ -89,4 +84,8 @@
   height: 100px;
   text-align: center;
   vertical-align: middle;
+}
+
+#coach-button {
+  border: 0;
 }

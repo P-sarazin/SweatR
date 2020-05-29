@@ -5,8 +5,8 @@
       <button type="button" class="card-category-top-left" data-toggle="modal" data-target="#LessonModal<%= lesson.id %>Center">
         <%= lesson.name.capitalize %>
       </button>
-      <button type="button" class="card-category-top-right" data-toggle="modal" data-target="#CoachModal<%= lesson.coach.id %>Center">
-        <%= lesson.coach.name.capitalize %>
+      <button type="button" id="coach-button" class="card-category-top-right" data-toggle="modal" data-target="#CoachModal<%= lesson.coach.id %>Center">
+        <%= image_tag lesson.coach.avatar_picture, class: "card-category-top-right avatar"%>
       </button>
       <div class="card-infos">
         <% if lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
