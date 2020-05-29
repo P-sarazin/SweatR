@@ -1,9 +1,17 @@
 <div class="container">
-  <div class="row">
-    <% @lessons.each do |lesson| %>
-      <div class="col-xs-12 col-md-4">
-        <%= render "card", lesson: lesson %>
+  <% Specialty.all.each do |specialty| %>
+    <div class="sport-category">
+      <h1><%= specialty.name %></h1>
+      <div class="row">
+        <% tests = @lessons.joins(:coach).where("coaches.specialty_id = ?", specialty.id) %>
+        <% tests.each do |lesson| %>
+          <div class="col-xs-12 col-md-4">
+            <%= render "card", lesson: lesson %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
+
+
