@@ -21,6 +21,8 @@ require("channels")
 import 'bootstrap';
 import {initPlyr} from '../plugins/init_plyr';
 import {countDownDate} from '../plugins/init_plyr';
+import {initSlick} from '../plugins/init_slick';
+
 
 
 import { loadDynamicBannerText } from '../components/banner';
@@ -28,5 +30,6 @@ import { loadDynamicBannerText } from '../components/banner';
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   initPlyr();
-  countDownDate();
+  // countDownDate();
+  initSlick();
 });

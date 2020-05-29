@@ -7,21 +7,25 @@ const initPlyr = () => {
 const countDownDate = new Date("May 29, 2020 15:37:25").getTime();
 
 const x = setInterval(function() {
-const now = new Date().getTime();
+  const now = new Date().getTime();
 
-const distance = countDownDate - now;
+  const distance = countDownDate - now;
 
-const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const timer = document.getElementById("Timer");
+  if (timer) {
+    document.getElementById("Timer").innerHTML = hours + "h "
+    + minutes + "m " + seconds + "s ";
 
-document.getElementById("Timer").innerHTML = hours + "h "
-+ minutes + "m " + seconds + "s ";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("Timer").innerHTML = "WELL DONE!!";
+      }
+    }
+  });
 
-if (distance < 0) {
-  clearInterval(x);
-  document.getElementById("Timer").innerHTML = "WELL DONE!!";
-}});
 
 export { initPlyr };
 export { countDownDate }
