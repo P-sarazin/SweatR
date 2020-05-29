@@ -16,7 +16,7 @@
         <% end %>
       </div>
       <% if current_user %>
-        <%= link_to "Book", lesson_bookings_path(lesson_id: lesson.id), method: :post, class: "card-category-bottom-right" %>
+        <%= link_to "Book", lesson_bookings_path(lesson_id: lesson.id), method: :post, class: "card-category-bottom-right d-none" %>
       <% else %>
         <%= link_to "Book", new_user_session_path, class: "card-category-bottom-right"%>
       <% end %>
