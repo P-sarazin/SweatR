@@ -69,7 +69,7 @@ coach_specifictraining = [jerem, thanh]
 puts "Creating lessons..."
 
 #lessons
-3.times do
+4.times do
   #hiit
   bodycombat = Lesson.create!({ name: 'body combat', appointment: Time.at((6.days.ago.to_i..6.days.from_now.to_i).to_a.sample), coach: coach_hiit.sample, url: "https://www.youtube.com/embed/xbABGepKT2o", lesson_picture: "https://res.cloudinary.com/dlevfhxyn/image/upload/v1590505539/SweatR/lessons/body_combat_ka6nab.jpg", lesson_description: "Partez pour un cours intensif d'1h de body combat Le Body Combat, la discipline qui nous sculpte un corps d'athlète.Créée dans les années 90 par Les Mills, le Body Combat mêle est un mix entre un cours intensif de cardio et des mouvements empruntés aux arts martiaux de haut niveau tels que le karaté, la boxe ou le taekwendo. En face de nous, aucun adversaire.", average_calories: 800})
   bodyattack = Lesson.create!({ name: 'body attack', appointment: Time.at((6.days.ago.to_i..6.days.from_now.to_i).to_a.sample), coach: coach_hiit.sample, url: "https://www.youtube.com/embed/0Q8LYWbH-Qw", lesson_picture: "https://res.cloudinary.com/dlevfhxyn/image/upload/v1590569759/SweatR/lessons/body_attack_deqq5f.jpg", lesson_description: "Les cours collectifs de BodyAttack sont des entraînements cardios par excellence, inspirés de sports collectifs et athlétiques, dont l'objectif est de développer l'endurance et la force. ... Au programme, des mouvements simples (pliométrie, aérobic et course à pieds), pour un travail complet sur le haut et le bas du corps.", average_calories: 800})
