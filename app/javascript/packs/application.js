@@ -20,7 +20,6 @@ require("channels")
 // dynamic banner (les mots de la page home qui défilent)
 import 'bootstrap';
 import {initPlyr} from '../plugins/init_plyr';
-import {countDownDate} from '../plugins/init_plyr';
 
 
 import { loadDynamicBannerText } from '../components/banner';
