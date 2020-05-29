@@ -11,6 +11,7 @@
     "jquery": "^3.5.1",
     "plyr": "^3.6.2",
     "popper.js": "^1.16.1",
+    "slick-carousel": "^1.8.1",
     "turbolinks": "^5.2.0",
     "typed.js": "^2.0.11"
   },
