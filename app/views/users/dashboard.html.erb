@@ -1,13 +1,10 @@
-<div class="top-container">
-  <h1>Hello <%= current_user.name %></h1>
-</div>
 <div class="bottom-container">
   <div class="bottom-left-container">
     <h3>Your booked session:</h3>
     <ul>
       <% @bookings.sort_by { |booking| booking.lesson.appointment }.each do |booking| %>
         <% if booking.lesson.appointment < Time.now %>
-          <li class="lesson-list" hidden>
+          <li class="lesson-list past-lesson d-none">
             <span><%= booking.lesson.name %> : <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00</span>
           </li>
         <% else %>
@@ -21,7 +18,7 @@
               <div>
                 <a class="btn-ghost lesson-soon-button" disabled>Soon</a>
             <% end %>
-            <%= link_to '❌',
+            <%= link_to '🗑',
             lesson_booking_path(booking.lesson, booking),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
@@ -30,7 +27,7 @@
         <% end %>
       <% end %>
     </ul>
-    <a class="btn-flat lesson-book" role="button" href="/lessons">Book another session</a>
+    <a class="btn-ghost" id="show-lesson-btn" role="button">Show/Hide past lessons</a>
   </div>
   <div class="bottom-right-container">
     <h3>Your performances</h3>
