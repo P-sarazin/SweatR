@@ -1,11 +1,11 @@
 <div class="container">
-  <% Specialty.all.each do |specialty| %>
+  <% @specialties.each do |specialty| %>
     <div class="sport-category">
       <h1><%= specialty.name %></h1>
       <div class="row">
         <div class="col-12">
           <div class="card-slick">
-            <% @lessons.joins(:coach).where("coaches.specialty_id = ?", specialty.id).each do |lesson| %>
+            <% @lessons.joins(:coach).where("coaches.specialty_id = ?", specialty.id).sort_by { |lesson| lesson.appointment }.each do |lesson| %>
                   <%= render "card", lesson: lesson %>
             <% end %>
           </div>

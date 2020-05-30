@@ -25,6 +25,7 @@ import {initSlick} from '../plugins/init_slick';
 import { loadDynamicBannerText } from '../components/banner';
 import { showLesson } from '../components/show_lesson'
 import { bookMouseover } from '../components/book_mouseover';
+import { testChart } from '../components/chart';
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
@@ -32,4 +33,5 @@ document.addEventListener('turbolinks:load', () => {
   initSlick();
   bookMouseover();
   showLesson();
+  testChart();
 });

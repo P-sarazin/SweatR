@@ -12,7 +12,7 @@
         <% if lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
           <p>Today at <%= lesson.appointment.strftime('%H') %>H00</p>
         <% else %>
-          <p>Next <%= lesson.appointment.strftime('%A') %> at <%= lesson.appointment.strftime('%H') %>H00</p>
+          <p><%= lesson.appointment.strftime('%A') %> at <%= lesson.appointment.strftime('%H') %>H00</p>
         <% end %>
       </div>
       <% if current_user %>
