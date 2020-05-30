@@ -1,7 +1,7 @@
 const bookMouseover = () => {
   const cards = document.querySelectorAll('.card-product')
   cards.forEach((card) => {
-    const bookButton = card.querySelector('.card-category-bottom-right')
+    const bookButton = card.querySelector('.card-category-center')
     card.addEventListener("mouseover", () => {
       bookButton.classList.remove('d-none');
     })

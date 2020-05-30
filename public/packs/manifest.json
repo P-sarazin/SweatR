@@ -1,19 +1,14 @@
 {
-  "application.js": "/packs/js/application-24db9359a424bcfb8513.js",
-  "application.js.map": "/packs/js/application-24db9359a424bcfb8513.js.map",
+  "application.js": "/packs/js/application-32f1a3d6a0008ab3fcf9.js",
+  "application.js.map": "/packs/js/application-32f1a3d6a0008ab3fcf9.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-24db9359a424bcfb8513.js"
+        "/packs/js/application-32f1a3d6a0008ab3fcf9.js"
       ],
       "js.map": [
-        "/packs/js/application-24db9359a424bcfb8513.js.map"
+        "/packs/js/application-32f1a3d6a0008ab3fcf9.js.map"
       ]
     }
-  },
-  "media/fonts/slick.eot": "/packs/media/fonts/slick-ced611da.eot",
-  "media/fonts/slick.svg": "/packs/media/fonts/slick-f97e3bbf.svg",
-  "media/fonts/slick.ttf": "/packs/media/fonts/slick-d41f55a7.ttf",
-  "media/fonts/slick.woff": "/packs/media/fonts/slick-b7c9e1e4.woff",
-  "media/slick/ajax-loader.gif": "/packs/media/slick/ajax-loader-c5cd7f53.gif"
+  }
 }

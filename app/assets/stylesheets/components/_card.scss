@@ -20,14 +20,20 @@
   top: 0px;
   right: 2px;
   }
-  .card-category-bottom-right {
-  background-color: $salmon;
+  .card-category-center {
+  background-color: #f67280;
   color: white;
-  padding: 5px 10px;
-  border-radius: 15px;
+  padding: 10px 20px;
+  border-radius: 30px;
   position: absolute;
-  bottom: 40px;
-  right: 5px;
+  bottom: 90px;
+  font-size: 20px;
+  opacity: 0.9;
+  right: 118px;
+  }
+  .card-category-center:hover {
+  text-decoration: none;
+  opacity: 1;
   }
   > img {
   height: 200px;
