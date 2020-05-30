@@ -3,10 +3,10 @@ const bookMouseover = () => {
   cards.forEach((card) => {
     const bookButton = card.querySelector('.card-category-bottom-right')
     card.addEventListener("mouseover", () => {
-      bookButton.classList.remove('d-none')
+      bookButton.classList.remove('d-none');
     })
     card.addEventListener("mouseleave", () => {
-      bookButton.classList.add('d-none')
+      bookButton.classList.add('d-none');
     })
   })
 }
