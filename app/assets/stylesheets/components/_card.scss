@@ -1,9 +1,10 @@
 .card-product {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin: 20px;
   border-radius: 15px;
+  height: 260px;
   position:relative;
   .card-category-top-left {
   background-color: white;
@@ -12,13 +13,24 @@
   position: absolute;
   top: 8px;
   left: 5px;
-  opacity: 0.7;
+  opacity: 0.95;
   border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
   }
-  .card-category-top-right {
+  .card-category-top-left:hover {
+    opacity:1;
+  }
+  .card-category-top-right .avatar {
   position: absolute;
-  top: 0px;
-  right: 2px;
+  top: 180px;
+  right: 10px;
+  border: 1px solid white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  }
+  .card-category-top-right .avatar:hover {
+    opacity:1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
   .card-category-center {
   background-color: #f67280;
@@ -26,9 +38,9 @@
   padding: 10px 20px;
   border-radius: 30px;
   position: absolute;
-  bottom: 90px;
-  font-size: 20px;
-  opacity: 0.9;
+  top: 90px;
+  font-size: 14px;
+  text-transform: uppercase;
   right: 118px;
   }
   .card-category-center:hover {
@@ -39,6 +51,7 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  opacity: 0.7;
   }
   h2 {
   font-size: 16px;
@@ -53,7 +66,7 @@
 }
 
 .card-product:hover {
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+  // box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 
 .card-div {
@@ -64,14 +77,16 @@
 }
 
 .card-infos {
-  height: 30px;
+  height: 60px;
   padding: 10px;
+  background: white;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   > p {
     font-size: 16px;
+    font-weight: bold;
   }
 }
 
@@ -98,4 +113,5 @@
 
 .slick-prev:before, .slick-next:before {
   font-size: 32px !important;
+  color: gray !important;
 }
