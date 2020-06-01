@@ -1,0 +1,45 @@
+.main-card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.main-card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.main-card-product h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.main-card-product p {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.main-card-product .main-card-product-infos {
+  padding: 16px;
+}
+
+
+.card-link  {
+  color: #F67280;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  margin-top: 15px;
+}

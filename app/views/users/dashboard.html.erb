@@ -1,41 +1,83 @@
-<div class="bottom-container">
-  <div class="bottom-left-container">
-    <h3>Your booked session:</h3>
-    <ul>
-      <% @bookings.sort_by { |booking| booking.lesson.appointment }.each do |booking| %>
-        <% if booking.lesson.appointment < Time.now %>
-          <li class="lesson-list past-lesson d-none">
-            <span><%= booking.lesson.name %> : <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00</span>
-          </li>
+<div class="container">
+  <div class="row">
+     <div class="col-sm-12">
+        <div class="main-card-product">
+        <% if user_signed_in? %>
+            <%= image_tag current_user.avatar_picture %>
         <% else %>
-          <li class="lesson-list">
-            <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
-              <span><%= booking.lesson.name %> : Today at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
-              <div>
-                <a href="/lessons/<%= booking.lesson.id %>" class="btn-ghost lesson-join-button">Join</a>
-            <% else %>
-              <span><%= booking.lesson.name %> : Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
-              <div>
-                <a class="btn-ghost lesson-soon-button" disabled>Soon</a>
-            <% end %>
-            <%= link_to '🗑',
-            lesson_booking_path(booking.lesson, booking),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-            </div>
-          </li>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         <% end %>
-      <% end %>
-    </ul>
-    <a class="btn-ghost" id="show-lesson-btn" role="button">Show/Hide past lessons</a>
+          <div class="main-card-product-infos">
+              <p> Hello <strong><%= current_user.name %> </strong>! Welcome to your dashboard! </p>
+          </div>
+        </div>
+     </div>
   </div>
-  <div class="bottom-right-container">
-    <h3>Your performances</h3>
-    <% sum_calories = 0 %>
-    <% @bookings.each do |booking| %>
-      <% sum_calories += booking.lesson.average_calories %>
-    <% end %>
-    <h4>Calories = <%= sum_calories %></h4>
-    <canvas id="myChart" width="400" height="400"></canvas>
+  <div class="dashboard-grid">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Your membership informations</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Congrats! you have been a member for <strong>2 years</strong>! Keep the good work!</h6>
+        <p class="card-text">Your current membership will expire on <strong>31/12/2020.</strong></p>
+        <a href="#" class="card-link">Extend your membership</a>
+        <a href="#" class="card-link">Buy individual classes</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Your performances</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Number of sessions since the beginning of the year: <strong>43</strong></h6>
+         <p class="card-text">
+                <% sum_calories = 0 %>
+                <% @bookings.each do |booking| %>
+                  <% sum_calories += booking.lesson.average_calories %>
+                <% end %>
+                <h6>Number of calories burned = <strong><%= sum_calories %></strong></h6>
+          </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Your booked sessions</h5>
+          <p class="card-text">
+            <ul class="list-unstyled">
+              <% @bookings.sort_by { |booking| booking.lesson.appointment }.each do |booking| %>
+                <% if booking.lesson.appointment < Time.now %>
+                  <li class="lesson-list past-lesson d-none">
+                    <span><strong><%= booking.lesson.name %> </strong> : <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00</span>
+                  </li>
+                <% else %>
+                  <li class="lesson-list mb-4">
+                    <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
+                      <span><strong><%= booking.lesson.name %> </strong> : Today at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
+                        <a href="/lessons/<%= booking.lesson.id %>" class="btn-ghost lesson-join-button">Join</a>
+                    <% else %>
+                      <span><strong><%= booking.lesson.name %> </strong>: Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
+                        <a class="btn-ghost lesson-soon-button" disabled>Soon</a>
+                    <% end %>
+                    <%= link_to '🗑',
+                    lesson_booking_path(booking.lesson, booking),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+           <a class="btn-ghost" id="show-lesson-btn" role="button">Show/Hide past lessons</a>
+         </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">HERE THE GRAPHIC OF PERFORMANCES</h5>
+          <canvas id="myChart" width="150" height="150"></canvas>
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+        <p class="card-text">XXXXXXX</p>
+      </div>
+    </div>
   </div>
+
 </div>
+
