@@ -26,6 +26,7 @@ import { loadDynamicBannerText } from '../components/banner';
 import { showLesson } from '../components/show_lesson'
 import { bookMouseover } from '../components/book_mouseover';
 import { bookingChart } from '../components/booking_chart';
+import { videoStream } from '../components/comments';
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
@@ -34,4 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   bookMouseover();
   showLesson();
   bookingChart();
+  videoStream();
 });
