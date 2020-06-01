@@ -1,5 +1,5 @@
 import Plyr from 'plyr';
-// import 'plyr/dist/plyr.css';
+import 'plyr/dist/plyr.css';
 const computeSecond = (seconde) => {
   if (seconde < 10) {
     return `0${seconde}`;
@@ -24,4 +24,3 @@ const initPlyr = () => {
   })
 };
 export { initPlyr };
-
