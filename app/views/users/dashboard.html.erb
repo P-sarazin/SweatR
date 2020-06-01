@@ -5,16 +5,16 @@
       <% @bookings.sort_by { |booking| booking.lesson.appointment }.each do |booking| %>
         <% if booking.lesson.appointment < Time.now %>
           <li class="lesson-list past-lesson d-none">
-            <span><%= booking.lesson.name %> : <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00</span>
+            <span><%= booking.lesson.name.capitalize %> : <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00</span>
           </li>
         <% else %>
           <li class="lesson-list">
             <% if booking.lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
-              <span><%= booking.lesson.name %> : Today at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
+              <span><%= booking.lesson.name.capitalize %> : Today at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
               <div>
                 <a href="/lessons/<%= booking.lesson.id %>" class="btn-ghost lesson-join-button">Join</a>
             <% else %>
-              <span><%= booking.lesson.name %> : Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
+              <span><%= booking.lesson.name.capitalize %> : Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</span>
               <div>
                 <a class="btn-ghost lesson-soon-button" disabled>Soon</a>
             <% end %>
@@ -35,7 +35,7 @@
     <% @bookings.each do |booking| %>
       <% sum_calories += booking.lesson.average_calories %>
     <% end %>
-    <h4>Calories = <%= sum_calories %></h4>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <h4>Total calories burnt for the last 4 months = <%= sum_calories %></h4>
+    <canvas data-booking="<%= booking_chart_json %>" id="myChart" width="600" height="400"></canvas>
   </div>
 </div>
