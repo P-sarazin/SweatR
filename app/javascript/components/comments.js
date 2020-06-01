@@ -17,15 +17,12 @@ const videoStream = () => {
   };
   var canvas, context, i, video, videoObj;
   canvas = document.getElementById('canvas');
-  if ((canvas != null) && canvas.length) {
-    context = canvas.getContext('2d');
-    video = document.getElementById('video');
-    videoObj = {
-      'video': true
-    };
-    i = void 0;
-  }
-  if (canvas != null && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  video = document.getElementById('video');
+  videoObj = {
+    'video': true
+  };
+  i = void 0;
+  if (video != null && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({
       video: true
     }).then(function(stream) {
