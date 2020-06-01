@@ -35,17 +35,34 @@
   .card-category-center {
   background-color: #f67280;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 30px;
   position: absolute;
-  top: 90px;
-  font-size: 14px;
+  top: 230px;
+  left: 270px;
+  font-size: 10px;
   text-transform: uppercase;
-  right: 118px;
+  opacity:0.9;
+  }
+  .card-category-center-booked{
+    background-color: #6FCF97;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 30px;
+    position: absolute;
+    top: 230px;
+    left: 260px;
+    font-size: 10px;
+    text-transform: uppercase;
+    opacity:0.9;
   }
   .card-category-center:hover {
   text-decoration: none;
   opacity: 1;
+  }
+  .card-category-center-booked:hover {
+    text-decoration: none;
+    opacity:1;
   }
   > img {
   height: 200px;
@@ -65,10 +82,6 @@
   }
 }
 
-.card-product:hover {
-  // box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-}
-
 .card-div {
   a {
   color: black;
@@ -81,12 +94,19 @@
   padding: 10px;
   background: white;
   text-align: center;
-  display: flex;
   justify-content: center;
   align-items: center;
   > p {
-    font-size: 16px;
+    font-size: 15px;
+    text-align: left;
+    color: black;
+  }
+  h3{
+    font-size: 20px;
+    text-align: left;
+    color: black;
     font-weight: bold;
+    margin-bottom: 0px;
   }
 }
 

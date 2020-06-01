@@ -9,16 +9,21 @@
         <%= image_tag lesson.coach.avatar_picture, class: "card-category-top-right avatar"%>
       </div>
       <div class="card-infos">
-        <% if lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
-          <p>Today at <%= lesson.appointment.strftime('%H') %>H00</p>
-        <% else %>
-          <p><%= lesson.appointment.strftime('%A') %> at <%= lesson.appointment.strftime('%H') %>H00</p>
-        <% end %>
+        <h3> Lesson with <%= lesson.coach.name %></h3>
+          <% if lesson.appointment.strftime('%A') == Time.now.strftime('%A') %>
+            <p>Today at <%= lesson.appointment.strftime('%H') %>H00</p>
+          <% else %>
+            <p><%= lesson.appointment.strftime('%A') %> at <%= lesson.appointment.strftime('%H') %>H00</p>
+          <% end %>
       </div>
       <% if current_user %>
-        <%= link_to "Book", lesson_bookings_path(lesson_id: lesson.id), method: :post, class: "card-category-center d-none" %>
+        <% if Booking.find_by(user_id: current_user.id, lesson_id: lesson.id) %>
+          <%= link_to "Booked", user_dashboard_path(user_id: current_user.id), method: :get, class: "card-category-center-booked" %>
+        <% else %>
+          <%= link_to "Book", lesson_bookings_path(lesson_id: lesson.id), method: :post, class: "card-category-center" %>
+        <% end %>
       <% else %>
-        <%= link_to "Book", new_user_session_path, class: "card-category-center d-none"%>
+        <%= link_to "Book", new_user_session_path, class: "card-category-center"%>
       <% end %>
      </div>
   </div>
