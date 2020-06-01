@@ -32,7 +32,6 @@ document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   initPlyr();
   initSlick();
-  bookMouseover();
   showLesson();
   bookingChart();
   videoStream();

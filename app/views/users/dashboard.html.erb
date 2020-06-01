@@ -34,7 +34,6 @@
             <% end %>
             <h6>Number of calories burned = <strong><%= sum_calories %></strong></h6>
           </p>
-          <canvas data-booking="<%= booking_chart_json %>" id="myChart" width="600" height="400"></canvas>
       </div>
     </div>
     <div class="card">
@@ -70,10 +69,9 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">HERE THE GRAPHIC OF PERFORMANCES</h5>
-          <canvas id="myChart" width="150" height="150"></canvas>
+        <h5 class="card-title">Graphe of performance</h5>
+          <canvas id="myChart" data-booking="<%= booking_chart_json %>" id="myChart" width="600" height="400"></canvas>
         <h6 class="card-subtitle mb-2 text-muted"></h6>
-        <p class="card-text">XXXXXXX</p>
       </div>
     </div>
   </div>
