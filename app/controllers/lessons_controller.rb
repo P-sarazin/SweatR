@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
   def index
     t = Time.now
     @lessons = Lesson.where("appointment > ?", t)
+    @specialties = Specialty.all
     if current_user
       @user = current_user
     end

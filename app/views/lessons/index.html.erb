@@ -1,11 +1,11 @@
 <div class="container">
-  <% Specialty.all.each do |specialty| %>
+  <% @specialties.each do |specialty| %>
     <div class="sport-category">
       <h1><%= specialty.name %></h1>
       <div class="row">
         <div class="col-12">
           <div class="card-slick">
-            <% @lessons.joins(:coach).where("coaches.specialty_id = ?", specialty.id).each do |lesson| %>
+            <% @lessons.joins(:coach).where("coaches.specialty_id = ?", specialty.id).sort_by { |lesson| lesson.appointment }.each do |lesson| %>
                   <%= render "card", lesson: lesson %>
             <% end %>
           </div>
@@ -44,9 +44,9 @@
                 <%= cl_image_tag lesson.coach.avatar_picture %>
               </div>
               <div class="modal-description">
-              <h5><strong>Son expérience de coach</strong></h5>
+              <h5><strong>Experience as a coach</strong></h5>
               <p><%= lesson.coach.bio %></p>
-              <h5><strong>Sa séance typique</strong></h5>
+              <h5><strong>Model Lesson</strong></h5>
               <p><%= lesson.coach.model_lesson %></p>
               </div>
             </div>
