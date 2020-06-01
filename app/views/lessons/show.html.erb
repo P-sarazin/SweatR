@@ -1,15 +1,7 @@
 <div class="lesson-show">
   <div class="show-container">
-    <div class="plyr__video-embed" id="player">
-      <iframe
-        src="<%= @lesson.url %>?origin=<%= root_url %>&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-        allowfullscreen
-        allowtransparency
-        allow="autoplay"
-      ></iframe>
-      <div class="timer" id="video-timer">
-
-      </div>
+    <div class="" id="player">
+      <video id="video" width="640" height="480" controls></video>
     </div>
     <div class="classes-description">
       <h3><strong>Today's workout</strong></h3>
