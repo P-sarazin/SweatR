@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: :index
   resources :coaches, only: [:index, :show]
+  resources :sessions
 end
