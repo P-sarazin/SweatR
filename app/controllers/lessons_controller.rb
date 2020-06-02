@@ -27,6 +27,7 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @booking = @lesson.bookings.where(user: current_user).first
   end
 
   private
