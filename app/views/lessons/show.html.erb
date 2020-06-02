@@ -45,7 +45,7 @@
         <%= simple_form_for([@lesson, @booking]) do |f| %>
           <%= f.input :review_rating, as: :integer %>
           <%= f.input :review_text, as: :text %>
-          <%= f.button :submit %>
+          <%= f.button :submit, class: 'btn btn-ghost' %>
         <% end %>
       </div>
     </div>
