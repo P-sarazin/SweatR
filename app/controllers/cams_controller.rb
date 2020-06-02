@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class CamsController < ApplicationController
   def create
     head :no_content
     ActionCable.server.broadcast "session_channel", session_params
@@ -6,6 +6,6 @@ class SessionsController < ApplicationController
 
   private
     def session_params
-      params.require(:session).permit(:type, :from, :to, :sdp, :candidate)
+      params.permit(:type, :from, :to, :sdp, :candidate)
     end
 end

@@ -186,7 +186,7 @@ const broadcastData = (data) => {
     "X-CSRF-TOKEN": csrfToken,
   });
 
-  fetch("/sessions", {
+  fetch("/cams", {
     method: "POST",
     body: JSON.stringify(data),
     headers,
