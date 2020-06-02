@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_134253) do
+ActiveRecord::Schema.define(version: 2020_06_02_131121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2020_05_29_134253) do
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "content"
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
+
   create_table "specialties", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -77,4 +86,5 @@ ActiveRecord::Schema.define(version: 2020_05_29_134253) do
   add_foreign_key "bookings", "users"
   add_foreign_key "coaches", "specialties"
   add_foreign_key "lessons", "coaches"
+  add_foreign_key "reviews", "bookings"
 end
