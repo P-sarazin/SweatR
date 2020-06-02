@@ -22,7 +22,18 @@
     font-size: 17px;
     transition: all 0.2s ease;
   }
-  .card-category-top-right .avatar {
+  .card-category-top-right {
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    opacity: 0.95;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  }
+  .card-category-center-right .avatar {
     position: absolute;
     top: 180px;
     right: 10px;
@@ -30,7 +41,7 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     transition: all 0.2s ease;
   }
-  .card-category-top-right .avatar:hover {
+  .card-category-center-right .avatar:hover {
     opacity:1;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     height:45px;
