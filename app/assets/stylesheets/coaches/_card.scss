@@ -1,0 +1,17 @@
+.card-product-coach {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 15px;
+  height: 450px;
+  .card-img-top {
+    text-align:center;
+    >img {
+      margin: 10px;
+      border-radius: 50%;
+      height: 200px;
+      width: 200px;
+    }
+  }
+}
+
+
