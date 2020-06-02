@@ -5,13 +5,16 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # @booking = Booking.new(booking_params)
-    @booking = Booking.new(user_id: current_user.id, lesson_id: params[:lesson_id])
+    @booking = Booking.new
+    @booking.lesson = Lesson.find(params[:lesson_id])
+    @booking.user = current_user
     @booking.save
     redirect_to user_dashboard_path(user_id: current_user.id), notice: 'This lesson has been successfully reserved.'
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    redirect_to user_dashboard_path(user_id: current_user.id)
   end
 
   def destroy
@@ -23,6 +26,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :lesson_id)
+    params.require(:booking).permit(:review_text, :review_rating)
   end
 end

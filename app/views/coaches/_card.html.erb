@@ -1,16 +1,10 @@
-<!-- <div class="card-div">
-  <div class="card-product" >
+<div class="card-product-coach">
+  <div class="card-img-top">
     <%= cl_image_tag coach.avatar_picture %>
-    <%= coach.bio %>
   </div>
-</div> -->
-
-<div class="card-product">
-  <img class="card-img-top" style="object-fit:cover;witdth:100%;height:15vw;object-position:0% 0%" src=" <%= cl_image_path coach.avatar_picture %>" alt="Card image cap">
+  <h3><%= coach.specialty.name %></h3>
   <div class="card-coach-infos">
     <p> <%= coach.bio %> </p>
   </div>
 </div>
 
-
-<!-- style="max-height:200px -->

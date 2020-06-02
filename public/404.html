@@ -1,67 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Ooops, you have run too fast and too far for us</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
+  *,
+  *:before,
+  *:after {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
   }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+  html {
+    font-size: 62.5%;
   }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  body {
+    background-color: rgb(247, 95, 118);
+    font-family: 'Hack', monospace;
   }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .text__error,
+  .text__link {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .text__error {
+    margin-top: -35px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 2rem;
+  }
+
+  .text__link {
+    margin-top: 5px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.4rem;
   }
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="rails-custom-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+  <div class="text__error" data-text="404 page not found"></div>
+  <div class="text__link"><a href="/" data-text="click here to go home"></a></div>
+  <script type="text/javascript">
+    function setCharAt(str,index,chr) {
+        if(index > str.length-1) return str;
+        return str.substr(0,index) + chr + str.substr(index+1);
+    }
+
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=+<>,./?[{()}]!@#$%^&*~`\|'.split('');
+
+    var progress404 = 0;
+    var total404 = document.querySelector('.text__error').dataset.text.length;
+
+    var progressLink = 0;
+    var totalLink = document.querySelector('.text__link a').dataset.text.length;
+
+    var scrambleInterval = setInterval(function() {
+      var string404 = document.querySelector('.text__error').dataset.text;
+      var stringLink = document.querySelector('.text__link a').dataset.text;
+
+      for(var i = 0; i < total404; i++) {
+        if(i >= progress404) {
+          string404 = setCharAt(string404, i, characters[Math.round(Math.random() * (characters.length - 1))]);
+        }
+      }
+
+      for(var i = 0; i < totalLink; i++) {
+        if(i >= progressLink) {
+          stringLink = setCharAt(stringLink, i, characters[Math.round(Math.random() * (characters.length - 1))]);
+        }
+      }
+
+      document.querySelector('.text__error').innerText = string404;
+      document.querySelector('.text__link a').innerText = stringLink;
+    }, 1000 / 60);
+
+    setTimeout(function() {
+      var revealInterval = setInterval(function() {
+        if(progress404 < total404) {
+          progress404++;
+        }else if(progressLink < totalLink) {
+          progressLink++;
+        }else{
+          clearInterval(revealInterval);
+          clearInterval(scrambleInterval);
+        }
+      }, 50);
+    }, 1000);
+  </script>
 </body>
 </html>
