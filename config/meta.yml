@@ -1,0 +1,6 @@
+meta_product_name: "SweatR"
+meta_title: "SweatR - Enjoy sport @Home with a real coach"
+meta_description: "At SweatR, we are passionate about sports, and we thrive to bring you the real experience @Home"
+meta_image: "sweatr_logo.png" # should exist in `app/assets/images/`
+meta-spec:
+  url: http://sweatr.xyz.com
