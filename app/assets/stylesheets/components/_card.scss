@@ -19,6 +19,8 @@
   }
   .card-category-top-left:hover {
     opacity:1;
+    font-size: 17px;
+    transition: all 0.2s ease;
   }
   .card-category-top-right .avatar {
   position: absolute;
@@ -30,7 +32,9 @@
   }
   .card-category-top-right .avatar:hover {
     opacity:1;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    height:45px;
+    width:45px;
   }
   .card-category-center {
   background-color: #f67280;
