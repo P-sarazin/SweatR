@@ -12,18 +12,15 @@ let remoteVideoContainer;
 let pcPeers = {};
 let localstream;
 
-window.onload = () => {
-  remoteVideoContainer = document.getElementById("remote-video-container");
-  if (remoteVideoContainer) {
-    currentUser = remoteVideoContainer.dataset.currentUserId;
-  }
-};
-
 // Ice Credentials
 const ice = { iceServers: [{ urls: "stun:stun.l.google.com:19302" }] };
 
 // Initialize user's own video
 document.addEventListener('turbolinks:load', () => {
+  remoteVideoContainer = document.getElementById("remote-video-container");
+  if (remoteVideoContainer) {
+    currentUser = remoteVideoContainer.dataset.currentUserId;
+  };
   const localVideo = document.getElementById("local-video");
   const joinButton = document.getElementById("join-button");
   if (joinButton) {
