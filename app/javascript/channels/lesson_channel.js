@@ -73,7 +73,7 @@ const joinRoom = (data) => {
 
 const removeUser = (data) => {
   console.log("removing user", data.from);
-  let video = document.getElementById(`remoteVideoContainer+${data.from}`);
+  let video = document.getElementById(`remoteVideoContainer-${data.from}`);
   video && video.remove();
   delete pcPeers[data.from];
 };
