@@ -1,11 +1,27 @@
+.card {
+  border-radius: 10px;
+  color: black;
+}
+
 .main-card-product {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background: $light-purple;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-top: 20px;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.main-card-product.previous {
+  opacity: 0.3;
+}
+.main-card-product .avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 .main-card-product img {
@@ -51,6 +67,26 @@
   margin-top: 2px;
 }
 
+.card-intro {
+  background: $dark-purple;
+  color: white;
+}
+
+.card-title.pricing-card-title {
+  font-size: 3rem;
+  text-align: center !important;
+}
+
+.card .metrics {
+    background: $light-purple;
+    border-radius: 10px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
 
 .tabs-underlined {
   display: flex;
