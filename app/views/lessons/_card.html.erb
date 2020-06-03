@@ -5,7 +5,7 @@
       <button type="button" class="card-category-top-left" data-toggle="modal" data-target="#LessonModal<%= lesson.id %>Center">
         <%= lesson.name.capitalize %>
       </button>
-      <% similar_bookings = @bookings.joins(:lesson).where("lessons.coach = ? AND lessons.name = ?", lesson.coach, lesson.name) %>
+      <% similar_bookings = @bookings.joins(:lesson).where("lessons.coach_id = ? AND lessons.name = ?", lesson.coach.id, lesson.name) %>
       <% unless similar_bookings.nil? %>
         <% sum_rating = 0 %>
         <% rating_given = 0 %>
