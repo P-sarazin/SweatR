@@ -93,6 +93,9 @@
 }
 
 .sweatr-stream {
-  width: 600px;
-  height: 300px
+  border: 1px solid gray;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  height: 400px;
+  margin: 30px;
 }
