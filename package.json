@@ -10,6 +10,7 @@
     "chart.js": "^2.9.3",
     "install": "^0.13.0",
     "jquery": "^3.5.1",
+    "jquery-bar-rating": "^1.2.2",
     "plyr": "^3.6.2",
     "popper.js": "^1.16.1",
     "redis": "^3.0.2",
