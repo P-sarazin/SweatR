@@ -13,7 +13,6 @@
 .classes-description {
   color: black;
   padding: 45px;
-  margin-left: -90px;
 }
 
 #player {
@@ -22,8 +21,9 @@
   margin: -15px;
 }
 
-.show-container {
-  display: flex !important;
+.video-and-description {
+  display: flex;
+  justify-content: center;
 }
 
 .btn-dashboard a {
@@ -45,6 +45,51 @@
   padding: 20px;
   padding-bottom: 10px;
   color: white;
+}
+
+#local-video{
+  margin: 20px;
+  width: 400px;
+  height: 300px;
+}
+
+.your-video{
+  border: 1px solid gray;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  height: 400px;
+  margin: 30px;
+}
+
+.classes-description {
+  border: 1px solid gray;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  margin: 30px;
+}
+
+.exercices{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin: 10px 50px;
+  height: 50px;
+  h3 {
+    font-weight: bold;
+  }
+  h4 {
+    font-size: 18px;
+  }
+}
+
+.description-container{
+  text-align: left;
+}
+
+#join-button {
+  margin-top: 220px;
+  margin: 20px;
+  background: #FF677D;
 }
 
 .sweatr-stream {
