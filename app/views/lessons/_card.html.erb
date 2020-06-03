@@ -16,8 +16,9 @@
           <% end %>
         <% end %>
         <% unless sum_rating.zero? %>
+        <% average_rating = sum_rating.to_f / rating_given %>
         <p class="card-category-top-right">
-          <%= sum_rating.to_f / rating_given %> ⭐️
+          <%= average_rating.round(2) %> ⭐️
         </p>
         <% end %>
       <% end %>
