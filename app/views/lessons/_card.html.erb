@@ -5,9 +5,22 @@
       <button type="button" class="card-category-top-left" data-toggle="modal" data-target="#LessonModal<%= lesson.id %>Center">
         <%= lesson.name.capitalize %>
       </button>
-      <p class="card-category-top-right">
-        <% lesson_reviews = @bookings.joins(:lesson).joins(:coach).where("lessons.coach = ? AND lessons.name = ?", lesson.coach, lesson.name) %>
-      </p>
+      <% similar_bookings = @bookings.joins(:lesson).where("lessons.coach_id = ? AND lessons.name = ?", lesson.coach.id, lesson.name) %>
+      <% unless similar_bookings.nil? %>
+        <% sum_rating = 0 %>
+        <% rating_given = 0 %>
+        <% similar_bookings.each do |booking| %>
+          <% unless booking.review_rating.nil? %>
+            <% sum_rating += booking.review_rating %>
+            <% rating_given += 1 %>
+          <% end %>
+        <% end %>
+        <% unless sum_rating.zero? %>
+        <p class="card-category-top-right">
+          <%= sum_rating.to_f / rating_given %> ⭐️
+        </p>
+        <% end %>
+      <% end %>
       <div id="coach-button" class="card-category-center-right cursor-pointer" data-toggle="modal" data-target="#CoachModal<%= lesson.coach.id %>Center">
         <%= image_tag lesson.coach.avatar_picture, class: "card-category-center-right avatar"%>
       </div>
