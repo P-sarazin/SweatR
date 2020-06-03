@@ -24,7 +24,7 @@ document.addEventListener('turbolinks:load', () => {
   const localVideo = document.getElementById("local-video");
   const joinButton = document.getElementById("join-button");
   if (joinButton) {
-    joinButton.onclick = handleJoinSession;
+    joinButton.addEventListener('click', handleJoinSession);
 
     navigator.mediaDevices
       .getUserMedia({
@@ -40,9 +40,13 @@ document.addEventListener('turbolinks:load', () => {
   };
 });
 
-const handleJoinSession = async () => {
+const handleJoinSession = (e) => {
+  e.preventDefault();
+
   consumer.subscriptions.create("LessonChannel", {
     connected: () => {
+      document.getElementById("join-button").style.display = "none";
+
       broadcastData({
         type: JOIN_ROOM,
         from: currentUser,
@@ -72,7 +76,7 @@ const joinRoom = (data) => {
 
 const removeUser = (data) => {
   console.log("removing user", data.from);
-  let video = document.getElementById(`remoteVideoContainer+${data.from}`);
+  let video = document.getElementById(`remoteVideoContainer-${data.from}`);
   video && video.remove();
   delete pcPeers[data.from];
 };

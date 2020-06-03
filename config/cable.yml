@@ -1,6 +1,4 @@
 development:
-  adapter: async
-  adapter: any_cable
   adapter: redis
   url: redis://localhost:6379/1
 
@@ -9,6 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: <%= ENV.fetch("REDISCLOUD_URL") { "redis://localhost:6379/1" } %>
   channel_prefix: SweatR_production
-  adapter: any_cable
