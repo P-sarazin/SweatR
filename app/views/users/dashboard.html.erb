@@ -34,7 +34,7 @@
   <!------DEBUT  des 2 cards contenant les Sessions------>
     <div class="dashboard-grid">
   <!------début card contenant les Sessions actuelles ------>
-      <div class="card">
+      <div class="card dashboard-card">
         <div class="card-body">
           <h5 class="card-title">Your booked sessions</h5>
             <div class="row">
@@ -72,7 +72,7 @@
       </div>
   <!------fin card contenant les Sessions actuelles ------>
   <!------début card contenant l'historique des sessions passées------>
-      <div class="card">
+      <div class="card dashboard-card">
         <div class="card-body">
           <h5 class="card-title">Your previous sessions</h5>
             <div class="row">
@@ -97,7 +97,7 @@
       <!------debut des cards contenant les metrics------>
       <div class="dashboard-grid">
         <!------debut card contenant les performances------>
-        <div class="card">
+        <div class="card dashboard-card">
           <div class="card-body">
             <h5 class="card-title">Your performances</h5>
               <div class="row">
@@ -137,7 +137,7 @@
         </div>
         <!------fin card contenant les performances ------>
         <!------card contenant le graphique----->
-        <div class="card">
+        <div class="card dashboard-card">
           <div class="card-body">
             <h5 class="card-title">Graphic</h5>
               <canvas id="myChart" data-booking="<%= booking_chart_json %>" id="myChart" width="400" height="300" background="$dark-purple"></canvas>
@@ -152,7 +152,7 @@
         <!------card contenant deux des autres cards du tab------>
           <div class="dashboard-grid">
         <!------card contenant les membership infos------>
-              <div class="card">
+              <div class="card dashboard-card">
                 <div class="card-body">
                   <h5 class="card-title">Your membership informations</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Congrats! you have been a member for <strong>2 years</strong>! Keep the good work!</h6>
@@ -162,7 +162,7 @@
                 </div>
               </div>
         <!------card contenant les credit card infos------>
-              <div class="card">
+              <div class="card dashboard-card">
                 <div class="card-body">
                   <h5 class="card-title">Your credit card informations</h5>
                   <h6 class="card-subtitle mb-2 text-muted">On record for you we have a credit card ending in: <strong>*0916</strong>.</h6>
