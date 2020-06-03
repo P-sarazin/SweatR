@@ -128,8 +128,6 @@
                       </div>
                     </div>
                   </div>
-
-
                 </div>
               </div>
 
@@ -138,11 +136,14 @@
         <!------fin card contenant les performances ------>
         <!------card contenant le graphique----->
         <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Graphic</h5>
-              <canvas id="myChart" data-booking="<%= booking_chart_json %>" id="myChart" width="400" height="300" background="$dark-purple"></canvas>
-            <h6 class="card-subtitle mb-2 text-muted"></h6>
-          </div>
+                <div class="card-body">
+                  <h5 class="card-title">Graphic</h5>
+                    <div class="card-trip">
+                        <canvas id="myChart" data-booking="<%= booking_chart_json %>" id="myChart" width="400" height="300" background="$dark-purple"></canvas>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                    </div>
+                  </div>
+              </div>
         </div>
         <!------fin card contenant le graphique----->
       </div>

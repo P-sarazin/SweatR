@@ -14,10 +14,10 @@ const bookingChart = () => {
                 label: '# of Bookings',
                 data: JSON.parse(ctx.dataset.booking),
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 99, 132, 0.2)'
+                    '#FF6A80',
+                    '#FF6A80',
+                    '#FF6A80',
+                    '#FF6A80'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
