@@ -24,7 +24,7 @@ document.addEventListener('turbolinks:load', () => {
   const localVideo = document.getElementById("local-video");
   const joinButton = document.getElementById("join-button");
   if (joinButton) {
-    joinButton.onclick = handleJoinSession;
+    joinButton.addEventListener('click', handleJoinSession);
 
     navigator.mediaDevices
       .getUserMedia({
@@ -40,7 +40,8 @@ document.addEventListener('turbolinks:load', () => {
   };
 });
 
-const handleJoinSession = async () => {
+const handleJoinSession = (e) => {
+  e.preventDefault();
   consumer.subscriptions.create("LessonChannel", {
     connected: () => {
       broadcastData({
