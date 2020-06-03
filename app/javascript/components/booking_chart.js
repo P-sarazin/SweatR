@@ -11,7 +11,7 @@ const bookingChart = () => {
         data: {
             labels: months,
             datasets: [{
-                label: '# of Bookings',
+                label: 'Sessions per month',
                 data: JSON.parse(ctx.dataset.booking),
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

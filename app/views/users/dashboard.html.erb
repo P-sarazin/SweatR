@@ -114,7 +114,7 @@
                   <div class="card metrics mt-3">
                     <div class="card-body">
                       <p class="card-text">
-                        <h1 class="card-title pricing-card-title"> <strong> 43 </strong></h1>
+                        <h1 class="card-title pricing-card-title"> <strong><%= @bookings.count %></strong></h1>
                         <h6 class="card-subtitle mb-2 text-muted" style="text-align: center">Number of sessions since the beginning of the year</h6>
                     </div>
                   </div>
@@ -133,8 +133,7 @@
         <!------card contenant le graphique----->
         <div class="card dashboard-card">
           <div class="card-body">
-            <h5 class="card-title">Graphic</h5>
-              <canvas id="myChart" data-booking="<%= booking_chart_json %>" width="400" height="300" background="$dark-purple"></canvas>
+            <canvas id="myChart" data-booking="<%= booking_chart_json %>" width="400" height="300" background="$dark-purple"></canvas>
             <h6 class="card-subtitle mb-2 text-muted"></h6>
           </div>
         </div>
