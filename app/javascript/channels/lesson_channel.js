@@ -42,8 +42,11 @@ document.addEventListener('turbolinks:load', () => {
 
 const handleJoinSession = (e) => {
   e.preventDefault();
+
   consumer.subscriptions.create("LessonChannel", {
     connected: () => {
+      document.getElementById("join-button").style.display = "none";
+
       broadcastData({
         type: JOIN_ROOM,
         from: currentUser,
