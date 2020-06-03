@@ -4,38 +4,23 @@ const sportChart = () => {
   const ctx = document.getElementById('mySports');
   if (ctx) {
     const booking_specialties = JSON.parse(ctx.dataset.booking);
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const months = [monthNames[TodayDate.getMonth()-3], monthNames[TodayDate.getMonth()-2], monthNames[TodayDate.getMonth()-1], monthNames[TodayDate.getMonth()]];
     const myChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: booking_specialties.keys,
+            labels: Object.keys(booking_specialties),
             datasets: [{
-                data: booking_specialties.values,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 99, 132, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 99, 132, 1)'
-                ],
+                data: Object.values(booking_specialties),
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                borderColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
                 borderWidth: 1
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
+              title: {
+                display: true,
+                text: 'Sessions per specialty'
+              }
             }
-        }
     });
   }
 }

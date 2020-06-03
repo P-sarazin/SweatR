@@ -4,14 +4,24 @@ module SportChartHelper
     total_booking = 0
     specialties = Specialty.all
     specialties.each do |specialty|
-      details_booking[specialty] = booking_per_specialty(specialty)
+      details_booking[specialty.name] = booking_per_specialty(specialty)
       total_booking += booking_per_specialty(specialty)
     end
-    return details_booking
+    details_booking.to_json
   end
 
   def booking_per_specialty(specialty)
-    bookings = @bookings.joins(:lesson).joins(:coach).where("coaches.specialty = ?", specialty)
-    return bookings.count
+    coaches = Coach.where("specialty_id = ?", specialty.id)
+    coach_ids = []
+    coaches.each do |coach|
+      coach_ids << coach.id
+    end
+    lessons = Lesson.where("coach_id IN (?)", coach_ids)
+    lesson_ids = []
+    lessons.each do |lesson|
+      lesson_ids << lesson.id
+    end
+    bookings = Booking.where("user_id = ? AND lesson_id IN (?)", current_user.id, lesson_ids)
+    bookings.count
   end
 end
