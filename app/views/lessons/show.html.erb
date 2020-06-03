@@ -73,9 +73,9 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for([@lesson, @booking]) do |f| %>
-          <%= f.input :review_rating, as: :integer %>
-          <%= f.input :review_text, as: :text %>
-          <%= f.button :submit, class: 'btn btn-ghost' %>
+          <%= f.input :review_rating, collection: (1..5).to_a, label: "Rate your experience" %>
+          <%= f.input :review_text, as: :text, label: "Tell us more" %>
+          <%= f.button :submit, "Send your review", class: 'btn btn-flat' %>
         <% end %>
       </div>
     </div>
