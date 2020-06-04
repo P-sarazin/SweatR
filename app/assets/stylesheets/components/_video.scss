@@ -1,0 +1,29 @@
+.video-container {
+  position: relative;
+}
+
+#local-video{
+  width: 220px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 778px;
+}
+
+.sweatr-stream {
+  height: 90vh;
+  width: 120vh;
+}
+
+#remote-video-container {
+  height: 80vh;
+  width: 1080px;
+  background-size: cover;
+
+}
+
+.video-and-description {
+  display: flex;
+  justify-content: center;
+  margin-left: -266px;
+}

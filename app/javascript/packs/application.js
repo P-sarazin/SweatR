@@ -19,7 +19,6 @@ require("channels")
 
 // dynamic banner (les mots de la page home qui défilent)
 import 'bootstrap';
-import {initPlyr} from '../plugins/init_plyr';
 import {initSlick} from '../plugins/init_slick';
 
 import { loadDynamicBannerText } from '../components/banner';
@@ -31,7 +30,6 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
-  initPlyr();
   initSlick();
   showLesson();
   bookingChart();
