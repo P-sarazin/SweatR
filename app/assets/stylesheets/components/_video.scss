@@ -10,8 +10,6 @@
 
 #local-video.stream-local {
   width: 220px;
-  position: absolute;
-  right: 0;
 }
 
 .sweatr-stream {
@@ -22,7 +20,13 @@
 #remote-video-container {
   height: 80vh;
   background-size: cover;
+  display: flex;
+  flex-direction: row-reverse;
+}
 
+.video-grid {
+  display: grid;
+  grid-auto-flow: row;
 }
 
 #remote-video-container video:nth-of-type(2) {
@@ -32,7 +36,9 @@
 }
 
 .sweatr-stream:nth-of-type(3) {
-
+  width: 700px;
+  left: 0;
+  position: absolute;
 }
 
 .video-and-description {
