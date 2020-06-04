@@ -27,19 +27,17 @@
 .video-grid {
   display: grid;
   grid-auto-flow: row;
+  video {
+    width: 220px !important;
+    height: 100% !important;
+  }
 }
 
-#remote-video-container video:nth-of-type(2) {
-  width: 700px;
-  left: 0;
-  position: absolute;
-}
-
-.sweatr-stream:nth-of-type(3) {
-  width: 700px;
-  left: 0;
-  position: absolute;
-}
+// #remote-video-container video:nth-of-type(2) {
+//   width: 700px;
+//   left: 0;
+//   position: absolute;
+// }
 
 .video-and-description {
   display: flex;

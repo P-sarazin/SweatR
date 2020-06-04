@@ -125,7 +125,7 @@ const createPC = (userId, isOffer) => {
       element.srcObject = event.streams[0];
       const videoGrid = document.querySelector(".video-grid");
       const streamVideos = remoteVideoContainer.querySelectorAll(".sweatr-stream");
-      if (streamVideos.length > 1) {
+      if (streamVideos.length === 1) {
         videoGrid.appendChild(element);
       } else {
         remoteVideoContainer.style.backgroundImage = "";
