@@ -1,6 +1,3 @@
-.plyr {
-  max-width: 70% !important;
-}
 
 .lesson-show {
   text-align: center;
@@ -15,11 +12,6 @@
   padding: 45px;
 }
 
-#player {
-  height: 670px;
-  width: 1180px;
-  margin: -15px;
-}
 
 .video-and-description {
   display: flex;
@@ -29,10 +21,6 @@
 .btn-dashboard a {
   color: black;
   box-shadow: 10px;
-}
-.plyr__video-embed {
-  padding-bottom: 56.25%;
-  margin: 15px;
 }
 
 #video-timer {
@@ -47,20 +35,6 @@
   color: white;
 }
 
-#local-video{
-  margin: 20px;
-  width: 400px;
-  height: 300px;
-}
-
-.your-video{
-  padding: 10px;
-  border: 1px solid gray;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  border-radius: 15px;
-  height: 400px;
-  margin: 30px;
-}
 
 .classes-description {
   border: 1px solid gray;
@@ -91,12 +65,12 @@
   margin-top: 220px;
   margin: 20px;
   background: #FF677D;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
 }
 
-.sweatr-stream {
-  border: 1px solid gray;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  border-radius: 15px;
-  height: 400px;
-  margin: 30px;
+
+.button-container {
+  display: flex
 }

@@ -1,6 +1,4 @@
-<button id="join-button" class="btn btn-success">
-      Start the lesson!
-</button>
+
 <div class="lesson-show">
   <div class="show-container">
 
@@ -39,28 +37,43 @@
       </div>
     </div>
     <div class="video-and-description">
-      <div class="your-video">
-        <h3>Hey it's you 👇 Let's work out 💪 </h3>
+      <div class="video-container">
         <video id="local-video" autoplay ></video>
-      </div>
-      <div id="remote-video-container" data-current-user-id="<%= current_user.id %>" width="980" height="660">
-      </div>
-      <div class="classes-description">
-        <h3><strong>Repetition 1 💪 - x4</strong></h3>
-          <div class="description-container">
-              <p>👉 30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
-              <p>👉 5x Burpees</p>
-              <p>👉 30sec rest</p>
+          <div>
+            <div id="remote-video-container" data-current-user-id="<%= current_user.id %>" width="980" height="660" style="background-image: url(<%= @lesson.lesson_picture %>);">
+              <div class="play-button">
+                <button id="join-button" class="btn btn-success">
+                Start the lesson!
+                </button>
+              </div>
+            </div>
           </div>
+
+      <div class="btn-group dropleft">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropleft
+        </button>
+        <div class="dropdown-menu">
+          <div class="classes-description">
+            <h3><strong>Repetition 1 💪 - x4</strong></h3>
+              <div class="description-container">
+                  <p>👉 30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
+                  <p>👉 5x Burpees</p>
+                  <p>👉 30sec rest</p>
+              </div>
+          </div>
+        </div>
       </div>
-    </div>
+      </div>
   </div>
     <hr />
-  <div class="btn-dashboard">
-    <button type="button" class="btn btn-ghost retour" data-toggle="modal" data-target="#reviewModalCenter">
-    Back to my dashboard
-    </button>
-  </div>
+    <div class="button-container">
+      <div class="btn-dashboard">
+        <button type="button" class="btn btn-ghost retour" data-toggle="modal" data-target="#reviewModalCenter">
+        Back to my dashboard
+        </button>
+      </div>
+    </div>
 </div>
 <div class="modal fade" id="reviewModalCenter" tabindex="-1" role="dialog" aria-labelledby="reviewModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
