@@ -16,7 +16,7 @@
 
 .lesson-soon-button {
   opacity: 0.7;
-  border-color: #F67280;
+  border-color: rgb(220,220,220);
 }
 
 .lesson-soon-button:hover {
@@ -29,11 +29,6 @@
   width: 100%;
 }
 
-
-.join-button {
-  border-radius: 30px;
-}
-
 #myChart {
   width: 100% !important;
   height: auto !important;
@@ -41,8 +36,6 @@
 
 .dashboard-card {
   margin-bottom: 20px;
-  background: $light-purple;
-  box-shadow: 0 0 50px rgba(0,0,0,0.4);
 }
 
 .card {
@@ -54,7 +47,7 @@
   overflow: hidden;
   height: 120px;
   background: $light-purple;
-  box-shadow: 0 0 50px rgba(0,0,0,0.4);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -122,15 +115,13 @@
 .card-title.pricing-card-title {
   font-size: 3rem;
   text-align: center !important;
-  color: #FF6A80;
 }
 
-.card-metrics {
-    border-radius: 10px;
+.card .metrics {
     background: $light-purple;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
 }
-
 
 .card-trip > img {
   height: 200px;

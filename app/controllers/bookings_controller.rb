@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to user_dashboard_path(user_id: current_user.id)
+    redirect_to user_dashboard_path(user_id: current_user.id, tab: 'metrics'), notice: 'Thank you for sharing your opinion with us!'
   end
 
   def destroy

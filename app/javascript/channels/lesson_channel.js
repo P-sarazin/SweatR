@@ -122,6 +122,7 @@ const createPC = (userId, isOffer) => {
       element.classList.add('sweatr-stream');
       element.autoplay = "autoplay";
       element.srcObject = event.streams[0];
+      remoteVideoContainer.style.backgroundImage = "";
       remoteVideoContainer.appendChild(element);
     };
   };
