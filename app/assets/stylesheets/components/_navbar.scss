@@ -1,8 +1,6 @@
-body {
-  margin-top: 56px;
-}
-
 .navbar-lewagon {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   background: white;
   background-color: #FFFFFF;
@@ -12,14 +10,20 @@ body {
   height: 70px;
   z-index: 10;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  padding: 0px 15px;
 }
 
 .navbar-lewagon .navbar-brand img {
   height: 70px;
   margin: 0;
   padding: 0;
+}
+
+.navbar-action-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  color: black;
 }

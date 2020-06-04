@@ -36,7 +36,9 @@
     <div class="page-container">
       <%= yield %>
     </div>
-    <%= render "shared/footer" %>
+    <% if !(params[:controller] == "lessons" && params[:action] == "show") %>
+      <%= render "shared/footer" %>
+    <% end %>
 
   </body>
 </html>
