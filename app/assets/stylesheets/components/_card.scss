@@ -36,7 +36,7 @@
   }
   .card-category-center-right .avatar {
     position: absolute;
-    top: 180px;
+    top: 172px;
     right: 10px;
     border: 1px solid white;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -45,8 +45,8 @@
   .card-category-center-right .avatar:hover {
     opacity:1;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    height:45px;
-    width:45px;
+    height:55px;
+    width:55px;
   }
   .card-category-center {
   background-color: #f67280;
@@ -54,9 +54,9 @@
   padding: 5px 10px;
   border-radius: 30px;
   position: absolute;
-  top: 230px;
-  left: 270px;
-  font-size: 10px;
+  top: 237px;
+  left: 260px;
+  font-size: 14px;
   text-transform: uppercase;
   opacity:0.9;
   }
@@ -66,9 +66,9 @@
     padding: 5px 10px;
     border-radius: 30px;
     position: absolute;
-    top: 230px;
-    left: 260px;
-    font-size: 10px;
+    top: 237px;
+    left: 242px;
+    font-size: 14px;
     text-transform: uppercase;
     opacity:0.9;
   }
