@@ -13,23 +13,23 @@
 }
 
 .sweatr-stream {
-  height: 524px;
-  width: 700px;
+  height: 94%;
+  // width: 700px;
 }
 
 #remote-video-container {
-  height: 80vh;
+  height: calc(100vh - 208px);
   background-size: cover;
   display: flex;
   flex-direction: row-reverse;
 }
 
 .video-grid {
-  display: grid;
-  grid-auto-flow: row;
+  display: flex;
+  flex-direction: column;
   video {
     width: 220px !important;
-    height: 100% !important;
+    height: 165px !important;
   }
 }
 
@@ -49,9 +49,9 @@
 .play-button {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
   width: 140px;
-  top: 340px;
+  top: 50%;
 }
 
 .play-btn {

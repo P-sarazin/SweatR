@@ -124,19 +124,20 @@ const createPC = (userId, isOffer) => {
       element.autoplay = "autoplay";
       element.srcObject = event.streams[0];
       const videoGrid = document.querySelector(".video-grid");
-      const streamVideos = remoteVideoContainer.querySelectorAll(".sweatr-stream");
+      let streamVideos = remoteVideoContainer.querySelectorAll(".sweatr-stream");
       if (streamVideos.length === 1) {
         videoGrid.appendChild(element);
       } else {
         remoteVideoContainer.style.backgroundImage = "";
         remoteVideoContainer.appendChild(element);
+        streamVideos = remoteVideoContainer.querySelectorAll(".sweatr-stream");
+        console.log(streamVideos);
       };
     };
   };
 
   pc.oniceconnectionstatechange = () => {
     if (pc.iceConnectionState == "disconnected") {
-      console.log("Disconnected:", userId);
       broadcastData({
         type: REMOVE_USER,
         from: userId,
