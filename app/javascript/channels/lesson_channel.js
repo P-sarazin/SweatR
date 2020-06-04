@@ -46,6 +46,7 @@ const handleJoinSession = (e) => {
   consumer.subscriptions.create("LessonChannel", {
     connected: () => {
       document.getElementById("join-button").style.display = "none";
+      document.getElementById("local-video").classList.add('stream-local')
 
       broadcastData({
         type: JOIN_ROOM,

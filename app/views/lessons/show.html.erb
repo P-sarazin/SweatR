@@ -38,21 +38,13 @@
     </div>
     <div class="video-and-description">
       <div class="video-container">
-        <video id="local-video" autoplay ></video>
-          <div>
-            <div id="remote-video-container" data-current-user-id="<%= current_user.id %>" width="980" height="660" style="background-image: url(<%= @lesson.lesson_picture %>);">
-              <div class="play-button">
-                <button id="join-button" class="btn btn-success">
-                Start the lesson!
-                </button>
-              </div>
-            </div>
+          <div id="remote-video-container" data-current-user-id="<%= current_user.id %>">
+            <video id="local-video" autoplay ></video>
           </div>
+            <div class="play-button">
+              <a id="join-button" class="play-btn" href="#"></a>
+            </div>
 
-      <div class="btn-group dropleft">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropleft
-        </button>
         <div class="dropdown-menu">
           <div class="classes-description">
             <h3><strong>Repetition 1 💪 - x4</strong></h3>
@@ -64,13 +56,13 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
   </div>
     <hr />
     <div class="button-container">
       <div class="btn-dashboard">
         <button type="button" class="btn btn-ghost retour" data-toggle="modal" data-target="#reviewModalCenter">
-        Back to my dashboard
+        Finish my class
         </button>
       </div>
     </div>
