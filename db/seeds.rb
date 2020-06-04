@@ -94,11 +94,14 @@ puts "Creating bookings..."
 
 #attributes bookings to users except pierre
 [axel, josephine, marie, stan, jeanne, claire, laurence, alexandra, emile].each do |user|
-  5.times do
+  6.times do
     lesson = Lesson.all.sample
     Booking.create!({ review_text: "", review_rating: nil, lesson: lesson, user: user })
   end
 end
+
+#create one booking with good review for the demo session
+Booking.create!({ review_text: "", review_rating: 5, lesson: bodycombat, user: stan })
 
 #attributes bookings to pierre (only past lessons)
 5.times do
