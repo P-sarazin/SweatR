@@ -1,54 +1,36 @@
 
 <div class="lesson-show">
   <div class="show-container">
-
-    <div class="exercices">
-      <div class="exo1">
-        <h4>Warm up</h4>
-        <h4>😩</h4>
-      </div>
-      <div>
-        ----
-      </div>
-      <div class="exo2">
-        <h3>Repetition 1</h3>
-        <h3>🥺</h3>
-      </div>
-      <div>
-        ----
-      </div>
-      <div class="exo3">
-        <h4>Repetition 2</h4>
-        <h4>💪</h4>
-      </div>
-      <div>
-        ----
-      </div>
-      <div class="exo4">
-        <h4>Repetition 3</h4>
-        <h4>🥵</h4>
-      </div>
-      <div>
-        ----
-      </div>
-      <div class="exo5">
-        <h4>Stretching</h4>
-        <h4>🤩</h4>
-      </div>
-    </div>
-    <div class="video-and-description">
-      <div class="video-container">
-        <video id="local-video" autoplay ></video>
-          <div>
-            <div id="remote-video-container" data-current-user-id="<%= current_user.id %>" width="980" height="660" style="background-image: url(<%= @lesson.lesson_picture %>);">
-              <div class="play-button">
-                <button id="join-button" class="btn btn-success">
-                Start the lesson!
-                </button>
-              </div>
+    <ul class="exercices nav nav-pills nav-fill">
+      <li class="nav-item">
+        <div class="nav-link active">Intro</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link">Warm up</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link">Tabata</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link">Boxing sequence</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link">Stretching</div>
+      </li>
+    </ul>
+  </div>
+  <div class="video-and-description">
+    <div class="video-container">
+      <video id="local-video" autoplay ></video>
+        <div>
+          <div id="remote-video-container" data-current-user-id="<%= current_user.id %>" width="980" height="660" style="background-image: url(<%= @lesson.lesson_picture %>);">
+            <div class="play-button">
+              <button id="join-button" class="btn btn-success">
+              Start the lesson!
+              </button>
             </div>
           </div>
-
+        </div>
       <div class="btn-group dropleft">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropleft
@@ -64,7 +46,7 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
   </div>
     <hr />
     <div class="button-container">
