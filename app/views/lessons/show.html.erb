@@ -1,32 +1,114 @@
 <div class="lesson-show">
-  <div class="show-container">
-    <div class="" id="player">
-      <video id="video" width="640" height="480" controls></video>
-    </div>
-    <div class="classes-description">
-      <h3><strong>Today's workout</strong></h3>
+  <div class="btn-group exercise-list mb-3">
+    <div class="dropdown dropdown-exercise">
+      <button class="exercise exercise-active dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Intro
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <div class="description-container">
-          <h4>Warm up - x2 🚴‍♂️</h4>
-            <p>-Hip extensions: 10 reps</p>
-            <p>-Hip rotations: 10 reps each leg</p>
-          <h4>Repetition 1 💪 - x4</h4>
-            <p>-30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
-            <p>-5x Burpees</p>
-            <p>-30sec rest</p>
-          <h4>Repetition 2 🏋️ - x3</h4>
-            <p>-50sec Squats - 10sec Rest</p>
-            <p>-50sec Push up - 10sec Rest</p>
-            <p>-50sec Mountain climbers - 10sec Rest</p>
-          <h4>Repetition 3 🧘 - x2</h4>
-            <p>-20x Sit up</p>
-            <p>-1min Body core</p>
-            <p>-30sec Side Plank each side</p>
-          <h4>Congratulations!</h4>
+            <p>👉 30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
+            <p>👉 5x Burpees</p>
+            <p>👉 30sec rest</p>
         </div>
+      </div>
+    </div>
+    <div class="dropdown dropdown-exercise">
+      <button class="exercise dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Warm up
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <div class="description-container">
+            <p>👉 30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
+            <p>👉 5x Burpees</p>
+            <p>👉 30sec rest</p>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown dropdown-exercise">
+      <button class="exercise dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tabata
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <div class="description-container">
+            <p>👉 30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
+            <p>👉 5x Burpees</p>
+            <p>👉 30sec rest</p>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown dropdown-exercise">
+      <button class="exercise dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Boxing sequence
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <div class="description-container">
+            <p>👉 30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
+            <p>👉 5x Burpees</p>
+            <p>👉 30sec rest</p>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown dropdown-exercise">
+      <button class="exercise dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Stretching
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <div class="description-container">
+            <p>👉 30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
+            <p>👉 5x Burpees</p>
+            <p>👉 30sec rest</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="btn-dashboard">
-    <a class="btn btn-ghost retour" href="/users/user_id/dashboard<%= @user %>">Back to Dashboard</a>
+    <div class="video-and-description">
+      <div class="video-container">
+          <div id="remote-video-container" data-current-user-id="<%= current_user.id %>">
+            <div class="video-grid">
+              <video id="local-video" autoplay ></video>
+            </div>
+          </div>
+            <div class="play-button">
+              <a id="join-button" class="play-btn" href="#"></a>
+            </div>
+
+        <div class="dropdown-menu">
+          <div class="classes-description">
+            <h3><strong>Repetition 1 💪 - x4</strong></h3>
+              <div class="description-container">
+                  <p>👉 30sec Back Lunge + 30sec Jumping Jacks + 30sec Front Lunge</p>
+                  <p>👉 5x Burpees</p>
+                  <p>👉 30sec rest</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="button-container">
+      <div class="btn-dashboard">
+        <button type="button" class="btn btn-ghost retour" data-toggle="modal" data-target="#reviewModalCenter">
+        Finish my class
+        </button>
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="reviewModalCenter" tabindex="-1" role="dialog" aria-labelledby="reviewModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reviewModalLongTitle">How was your lesson?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for([@lesson, @booking]) do |f| %>
+          <%= f.input :review_rating, collection: (1..5).to_a, label: "Rate your experience" %>
+          <%= f.input :review_text, as: :text, label: "Tell us more" %>
+          <%= f.button :submit, "Send your review", class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-

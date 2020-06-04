@@ -1,6 +1,3 @@
-.plyr {
-  max-width: 70% !important;
-}
 
 .lesson-show {
   text-align: center;
@@ -12,26 +9,43 @@
 
 .classes-description {
   color: black;
-  padding: 17px;
+  padding: 45px;
 }
 
-#player {
-  height: 670px;
-  width: 1180px;
-  margin: -15px;
+.exercise-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
 }
 
-.show-container {
-  display: flex !important;
+.dropdown-exercise {
+  width: -webkit-fill-available;
 }
 
-.btn-dashboard a {
+.exercise {
+  color: $salmon;
+  background-color: white;
+  border-radius: 2px;
+  display: block;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  border: 0 !important;
+  width: -webkit-fill-available;
+}
+
+.exercise-active {
+  color: #fff;
+  background-color: $salmon;
+}
+
+.video-and-description {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-dashbooard a {
   color: black;
   box-shadow: 10px;
-}
-.plyr__video-embed {
-  padding-bottom: 56.25%;
-  margin: 15px;
 }
 
 #video-timer {
@@ -44,4 +58,29 @@
   padding: 20px;
   padding-bottom: 10px;
   color: white;
+}
+
+.classes-description {
+  border: 1px solid gray;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  margin: 30px;
+}
+
+.description-container {
+  text-align: left;
+  padding: 10px;
+}
+
+#join-button {
+  margin-top: 220px;
+  margin: 20px;
+  background: #FF677D;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.button-container {
+  display: flex
 }

@@ -17,10 +17,16 @@
 .lesson-soon-button {
   opacity: 0.7;
   border-color: rgb(220,220,220);
+  margin-right: 15px;
 }
 
 .lesson-soon-button:hover {
   opacity: 0.7;
+}
+
+.lesson-join-button {
+  border-radius: 50px !important;
+  margin-right: 15px;
 }
 
 .lesson-book {
@@ -30,6 +36,137 @@
 }
 
 #myChart {
-  width: 600px !important;
-  height: 400px !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.dashboard-card {
+  margin-bottom: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  color: black;
+}
+
+.main-card-product {
+  overflow: hidden;
+  height: 120px;
+  background: $light-purple;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 1em;
+  border-radius: 10px;
+  .avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  .main-card-product-infos {
+    padding: 16px;
+  }
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 1.75rem;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+}
+
+.previous {
+  opacity: 0.45;
+}
+
+.main-card-product-photo {
+  display: flex;
+  align-items: center;
+}
+
+.card-link  {
+  color: #F67280;
+}
+
+.dashboard-grid-sessions {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  margin-top: 15px;
+}
+
+.dashboard-grid-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  margin-top: 15px;
+}
+
+.second-card-product-infos {
+  font-size: 0.1rem;
+  line-height: 1;
+  opacity: 1;
+  margin-bottom: 0;
+  margin-top: 2px;
+}
+
+.card-intro {
+  background: $dark-purple;
+  color: white;
+  margin-top: 20px;
+  justify-content: flex-start !important;
+}
+
+.card-title.pricing-card-title {
+  font-size: 3rem;
+  text-align: center !important;
+}
+
+.card .metrics {
+    background: $light-purple;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+}
+
+.tabs-underlined .tab-underlined {
+  color: black;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+  background-color: transparent !important;
+  border: none;
+  .active {
+    opacity: 1;
+    border-bottom: 3px solid #555555;
+  }
+}
+
+.no-border {
+  border: 0 !important;
 }

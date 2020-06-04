@@ -5,10 +5,9 @@ Rails.application.routes.draw do
     get "/dashboard", to: "users#dashboard"
   end
   resources :lessons do
-    resources :bookings, only: [:new, :create, :show, :destroy] do
-      resources :reviews, only: [:new, :create, :index]
-    end
+    resources :bookings, only: [:new, :create, :update, :show, :destroy]
   end
   resources :bookings, only: :index
   resources :coaches, only: [:index, :show]
+  resources :cams
 end

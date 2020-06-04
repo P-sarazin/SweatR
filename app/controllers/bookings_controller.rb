@@ -13,11 +13,20 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to user_dashboard_path(user_id: current_user.id, tab: 'metrics'), notice: 'Thank you for sharing your opinion with us!'
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_back(fallback_location: root_path)
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:review_text, :review_rating)
   end
 end

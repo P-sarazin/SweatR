@@ -2,15 +2,15 @@
   <!------banniere principale d'accueil dashbord en haut------>
   <div class="row">
      <div class="col-sm-12">
-        <div class="main-card-product">
+        <div class="main-card-product card-intro">
         <% if user_signed_in? %>
-            <%= image_tag current_user.avatar_picture %>
+            <%= image_tag current_user.avatar_picture, class: "avatar"  %>
         <% else %>
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         <% end %>
           <div class="main-card-product-infos">
-              <p> Hey <strong><%= current_user.name %> </strong>! Welcome to your dashboard! </p>
-              <h4> Here you'll find all your metrics and informations about your sessions! </H4>
+              <p> Hey <strong><%= current_user.name %> </strong>!  </p>
+              <h8> Here you'll find all your metrics and informations about your sessions!</h8>
           </div>
         </div>
      </div>
@@ -18,112 +18,109 @@
 <!------debut des différentes tabs------>
   <ul class="nav nav-tabs list-inline tabs-underlined" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active tab-underlined" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My sessions</a>
+      <a class="nav-link tab-underlined <%= 'active' unless params[:tab] == "metrics" %>" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My sessions</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-underlined" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My metrics</a>
+      <a class="nav-link tab-underlined <%= 'active' if params[:tab] == "metrics" %>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My metrics</a>
     </li>
     <li class="nav-item">
       <a class="nav-link tab-underlined" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">My account</a>
     </li>
   </ul>
-
-
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade <%= 'show active' unless params[:tab] == "metrics" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
   <!------DEBUT  des 2 cards contenant les Sessions------>
-    <div class="dashboard-grid">
+    <div class="dashboard-grid-sessions">
   <!------début card contenant les Sessions actuelles ------>
-      <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Your booked sessions</h5>
-            <div class="row">
-             <div class="col-sm-12">
-                        <% @next_bookings.each do |booking| %>
-                            <div class="main-card-product">
-                              <%= image_tag booking.lesson.lesson_picture %>
-                              <div class="main-card-product-infos">
-                                  <% if booking.lesson.appointment.to_date == Date.today %>
-                                    <span><strong><%= booking.lesson.name %> </strong> <br/>
-                                      Today at <%= booking.lesson.appointment.strftime('%H') %>H00</span> <br/>
-                                      <a href="/lessons/<%= booking.lesson.id %>" class="btn-ghost lesson-join-button">Join</a>
-                                  <% else %>
-                                    <span><strong><%= booking.lesson.name %> </strong> <br/>
-                                    Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</span> <br/>
-                                      <a class="btn-ghost lesson-soon-button" disabled>Soon</a>
-                                  <% end %>
-
-                                  <%= link_to
-                                  lesson_booking_path(booking.lesson, booking),
-                                  method: :delete,
-                                  data: { confirm: "Are you sure?" } do %>
-                                    <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                      <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                    </svg>
-                                  <% end %>
-                              </div>
-                            </div>
-                          <% end %>
+          <div class="row">
+           <div class="col-sm-12">
+              <% @next_bookings.each do |booking| %>
+                <div class="main-card-product">
+                  <div class="main-card-product-photo">
+                    <%= image_tag booking.lesson.lesson_picture, class: "avatar" %>
+                    <div class="main-card-product-infos">
+                      <% if booking.lesson.appointment.to_date == Date.today %>
+                        <span><strong><%= booking.lesson.name.capitalize %> with <%= booking.lesson.coach.name.capitalize %></strong> <br/>
+                          Today at <%= booking.lesson.appointment.strftime('%H') %>H00</span> <br/>
+                      <% else %>
+                        <span><strong><%= booking.lesson.name.capitalize %> with <%= booking.lesson.coach.name.capitalize %></strong> <br/>
+                        Next <%= booking.lesson.appointment.strftime('%A') %> at <%= booking.lesson.appointment.strftime('%H') %>H00</span> <br/>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="main-card-product-actions">
+                    <% if booking.lesson.appointment.to_date == Date.today %>
+                      <a href="/lessons/<%= booking.lesson.id %>" class="btn-flat lesson-join-button">Join</a>
+                    <% else %>
+                      <a class="btn-ghost lesson-soon-button" disabled>Soon</a>
+                    <% end %>
+                    <%= link_to lesson_booking_path(booking.lesson, booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+                      <svg class="bi bi-trash" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                      </svg>
+                    <% end %>
+                  </div>
                 </div>
-              </div>
-        </div>
-      </div>
-  <!------fin card contenant les Sessions actuelles ------>
-  <!------début card contenant l'historique des sessions passées------>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Your previous sessions</h5>
-           <ul class="list-unstyled">
-            <div class="row">
-             <div class="col-sm-12">
-              <ul class="list-unstyled previous">
-                <% @previous_bookings.each do |booking| %>
-                    <div class="main-card-product">
+              <% end %>
+              <% @previous_bookings.each do |booking| %>
+                  <div class="main-card-product previous">
+                    <div class="main-card-product-photo">
+                      <%= image_tag booking.lesson.lesson_picture, class: "avatar" %>
                       <div class="main-card-product-infos">
-                        <ul class="list-unstyled">
-                            <li class="lesson-list">
-                            <li class="lesson-list past-lesson">
-                              <%= image_tag booking.lesson.lesson_picture %>
-                              <span><strong><%= booking.lesson.name %> </strong> : <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00</span>
-                            </li>
-                        </ul>
+                        <strong><%= booking.lesson.name.capitalize %> with <%= booking.lesson.coach.name.capitalize %></strong><br/> <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00
                       </div>
                     </div>
-                  <% end %>
-              </ul>
-              </div>
+                  </div>
+                <% end %>
             </div>
-          </ul>
+          </div>
         </div>
-      </div>
   <!------fin card contenant l'historique  des sessions passées------>
     </div>
   <!------FIN  des 2 cards contenant les Sessions------>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade <%= 'show active' if params[:tab] == "metrics" %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <!------debut des cards contenant les metrics------>
-      <div class="dashboard-grid">
+      <div class="dashboard-grid-metrics dashboard-card">
         <!------debut card contenant les performances------>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Your performances</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Number of sessions since the beginning of the year: <strong>43</strong></h6>
-             <p class="card-text">
-                <% sum_calories = 0 %>
-                <% @bookings.each do |booking| %>
-                  <% sum_calories += booking.lesson.average_calories %>
-                <% end %>
-                <h6>Number of calories burned = <strong><%= sum_calories %></strong></h6>
-              </p>
+        <div class="card no-border">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card metrics">
+               <div class="card-body">
+                 <p class="card-text">
+                    <% sum_calories = 0 %>
+                    <% @bookings.each do |booking| %>
+                      <% sum_calories += booking.lesson.average_calories %>
+                    <% end %>
+                    <h1 class="card-title pricing-card-title"> <strong><%= sum_calories %></strong></h1>
+                    <h6 class="card-subtitle mb-2 text-muted" style="text-align: center">Number of calories burned</h6>
+                </div>
+              </div>
+              <div class="card metrics mt-3">
+                <div class="card-body">
+                  <p class="card-text">
+                    <h1 class="card-title pricing-card-title"> <strong><%= @bookings.count %></strong></h1>
+                    <h6 class="card-subtitle mb-2 text-muted" style="text-align: center">Number of sessions since the beginning of the year</h6>
+                </div>
+              </div>
+              <div class="card metrics mt-3 mb-3">
+                <div class="card-body">
+                  <div class="card-trip">
+                    <canvas id="mySports" data-booking="<%= total_booking_json %>" width="400" height="300" background="$dark-purple"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <!------fin card contenant les performances ------>
         <!------card contenant le graphique----->
-        <div class="card">
+        <div class="card dashboard-card">
           <div class="card-body">
-            <h5 class="card-title">Graphe of performance</h5>
-              <canvas id="myChart" data-booking="<%= booking_chart_json %>" id="myChart" width="600" height="400"></canvas>
+            <canvas id="myChart" data-booking="<%= booking_chart_json %>" width="400" height="300" background="$dark-purple"></canvas>
             <h6 class="card-subtitle mb-2 text-muted"></h6>
           </div>
         </div>
@@ -133,34 +130,30 @@
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <!------card contenant deux des autres cards du tab------>
-          <div class="dashboard-grid">
+          <div class="dashboard-grid-metrics">
         <!------card contenant les membership infos------>
-              <div class="card">
+              <div class="card dashboard-card mt-4 mb-4">
                 <div class="card-body">
                   <h5 class="card-title">Your membership informations</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Congrats! you have been a member for <strong>2 years</strong>! Keep the good work!</h6>
                   <p class="card-text">Your current membership will expire on <strong>31/12/2020.</strong></p>
-                  <a href="#" class="card-link">Extend your membership</a>
-                  <a href="#" class="card-link">Buy individual classes</a>
+                  <a class="btn btn-flat" href="#">Extend your membership</a>
+                  <a class="btn btn-flat" href="#">Buy individual classes</a>
                 </div>
               </div>
         <!------card contenant les credit card infos------>
-              <div class="card">
+              <div class="card dashboard-card mt-4 mb-4">
                 <div class="card-body">
                   <h5 class="card-title">Your credit card informations</h5>
                   <h6 class="card-subtitle mb-2 text-muted">On record for you we have a credit card ending in: <strong>*0916</strong>.</h6>
                   <p class="card-text">Your current membership will automatically renew on 31/12/2020.</p>
-                  <a href="#" class="card-link">Change my credit card information</a>
-                  <a href="#" class="card-link">Delete my credit card information</a>
+                  <a class="btn btn-flat" href="#">Change my credit card</a>
+                  <a class="btn btn-flat" href="#">Delete my credit card</a>
                 </div>
-               </div>
+              </div>
           </div>
         <!------fin card contenant les credit card infos--------------->
     </div>
     <!------fin card contenant deux des autres cards du tab------>
-
+  </div>
 </div>
-
-
-
-

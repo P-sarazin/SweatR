@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
   def index
     t = Time.now
     @lessons = Lesson.where("appointment > ?", t)
+    @bookings = Booking.all
     @specialties = Specialty.all
     if current_user
       @user = current_user
@@ -26,6 +27,7 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @booking = @lesson.bookings.where(user: current_user).first
   end
 
   private
