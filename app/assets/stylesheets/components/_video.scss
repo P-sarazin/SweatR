@@ -25,8 +25,8 @@
 }
 
 .video-grid {
-  display: grid;
-  grid-auto-flow: row;
+  display: flex;
+  flex-direction: column;
   video {
     width: 220px !important;
     height: 165px !important;
