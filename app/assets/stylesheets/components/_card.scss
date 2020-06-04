@@ -1,10 +1,10 @@
 .card-product {
   overflow: hidden;
   background: black;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   margin: 20px;
   border-radius: 15px;
-  height: 260px;
+  height: 280px;
   position:relative;
   .card-category-top-left {
   background-color: white;
@@ -24,6 +24,7 @@
   }
   .card-category-top-right {
     background-color: white;
+    color: black;
     padding: 5px;
     border-radius: 15px;
     position: absolute;
@@ -104,8 +105,8 @@
 }
 
 .card-infos {
-  height: 60px;
-  padding: 10px;
+  height: 80px;
+  padding: 20px;
   background: white;
   text-align: center;
   justify-content: center;
@@ -133,6 +134,10 @@
    z-index: 10040;
    overflow: auto;
    overflow-y: auto;
+ }
+
+ .modal-description{
+  padding:20px;
  }
 
 .card-coach-infos {
