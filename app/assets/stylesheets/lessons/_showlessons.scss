@@ -14,23 +14,28 @@
 
 .exercise-list {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.dropdown-exercise {
+  width: -webkit-fill-available;
 }
 
 .exercise {
-  color: black;
+  color: $salmon;
   background-color: white;
   border-radius: 2px;
   display: block;
   padding: 0.5rem 1rem;
   box-sizing: border-box;
   border: 0 !important;
+  width: -webkit-fill-available;
 }
 
 .exercise-active {
   color: #fff;
-  background-color: #f8b595;
+  background-color: $salmon;
 }
 
 .video-and-description {
@@ -55,7 +60,6 @@
   color: white;
 }
 
-
 .classes-description {
   border: 1px solid gray;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -63,8 +67,9 @@
   margin: 30px;
 }
 
-.description-container{
+.description-container {
   text-align: left;
+  padding: 10px;
 }
 
 #join-button {
