@@ -47,10 +47,10 @@ const handleJoinSession = (e) => {
     connected: () => {
       document.getElementById("join-button").style.display = "none";
       document.getElementById("local-video").classList.add('stream-local')
-
+      remoteVideoContainer.insertAdjacentHTML('beforeend', `<div id="main-video-loading">Waiting for connection</div>` )
       broadcastData({
         type: JOIN_ROOM,
-        from: currentUser,
+        from: currentUser
       });
     },
     received: (data) => {
@@ -119,19 +119,40 @@ const createPC = (userId, isOffer) => {
   pc.ontrack = (event) => {
     if (!document.getElementById(`remoteVideoContainer-${userId}`)) {
       const element = document.createElement("video");
-      element.id = `remoteVideoContainer-${userId}`;
-      element.classList.add('sweatr-stream');
-      element.autoplay = "autoplay";
-      element.srcObject = event.streams[0];
+      // const currentUserName = remoteVideoContainer.dataset.currentUserName;
+      // element.id = `remoteVideoContainer-${userId}`;
+      // element.classList.add('sweatr-stream');
+      // element.autoplay = "autoplay";
+      // element.srcObject = event.streams[0];
+      const html = `
+        <div class="video-streamed" id="remoteVideoContainer-${userId}">
+          <video autoplay class="sweatr-stream"></video>
+          <div class="cam-name"></div>
+          <div class="loading">Loading</div>
+        </div>
+      `
       const videoGrid = document.querySelector(".video-grid");
       let streamVideos = remoteVideoContainer.querySelectorAll(".sweatr-stream");
       if (streamVideos.length === 1) {
-        videoGrid.appendChild(element);
+        videoGrid.insertAdjacentHTML('beforeend', html);
       } else {
-        remoteVideoContainer.style.backgroundImage = "";
-        remoteVideoContainer.appendChild(element);
-        streamVideos = remoteVideoContainer.querySelectorAll(".sweatr-stream");
-        console.log(streamVideos);
+        document.getElementById('main-video-loading').remove();
+        // remoteVideoContainer.style.backgroundImage = "";
+        remoteVideoContainer.insertAdjacentHTML('beforeend', html);
+        const videoContainer = remoteVideoContainer.querySelector(`#remoteVideoContainer-${userId} video`);
+        videoContainer.srcObject = event.streams[0];
+        const url = `/cams/username?id=${userId}`;
+        fetch(url, {
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        })
+        .then(response => response.json())
+        .then((data) => {
+          const camName = remoteVideoContainer.querySelector(`#remoteVideoContainer-${userId} .cam-name`);
+          camName.innerHTML = data.username;
+        });
       };
     };
   };
