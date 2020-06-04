@@ -46,6 +46,7 @@ const handleJoinSession = (e) => {
   consumer.subscriptions.create("LessonChannel", {
     connected: () => {
       document.getElementById("join-button").style.display = "none";
+      document.getElementById("local-video").classList.add('stream-local')
 
       broadcastData({
         type: JOIN_ROOM,
@@ -122,8 +123,14 @@ const createPC = (userId, isOffer) => {
       element.classList.add('sweatr-stream');
       element.autoplay = "autoplay";
       element.srcObject = event.streams[0];
-      remoteVideoContainer.style.backgroundImage = "";
-      remoteVideoContainer.appendChild(element);
+      const videoGrid = document.querySelector(".video-grid");
+      const streamVideos = remoteVideoContainer.querySelectorAll(".sweatr-stream");
+      if (streamVideos.length > 1) {
+        videoGrid.appendChild(element);
+      } else {
+        remoteVideoContainer.style.backgroundImage = "";
+        remoteVideoContainer.appendChild(element);
+      };
     };
   };
 
