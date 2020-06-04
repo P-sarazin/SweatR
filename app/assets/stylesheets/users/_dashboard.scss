@@ -17,10 +17,16 @@
 .lesson-soon-button {
   opacity: 0.7;
   border-color: rgb(220,220,220);
+  margin-right: 15px;
 }
 
 .lesson-soon-button:hover {
   opacity: 0.7;
+}
+
+.lesson-join-button {
+  border-radius: 50px !important;
+  margin-right: 15px;
 }
 
 .lesson-book {
@@ -49,50 +55,59 @@
   background: $light-purple;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 1em;
   border-radius: 10px;
+  .avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  .main-card-product-infos {
+    padding: 16px;
+  }
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 1.75rem;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
 }
 
-.main-card-product.previous {
-  opacity: 0.3;
-}
-.main-card-product .avatar {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+.previous {
+  opacity: 0.45;
 }
 
-.main-card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.main-card-product h2 {
-  font-size: 26px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.main-card-product p {
-  font-size: 1.75rem;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.main-card-product .main-card-product-infos {
-  padding: 16px;
+.main-card-product-photo {
+  display: flex;
+  align-items: center;
 }
 
 .card-link  {
   color: #F67280;
 }
 
-.dashboard-grid {
+.dashboard-grid-sessions {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  margin-top: 15px;
+}
+
+.dashboard-grid-metrics {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
@@ -110,6 +125,8 @@
 .card-intro {
   background: $dark-purple;
   color: white;
+  margin-top: 20px;
+  justify-content: flex-start !important;
 }
 
 .card-title.pricing-card-title {
@@ -144,9 +161,12 @@
   border-bottom: 4px solid transparent;
   background-color: transparent !important;
   border: none;
+  .active {
+    opacity: 1;
+    border-bottom: 3px solid #555555;
+  }
 }
 
-.tabs-underlined .tab-underlined.active {
-  opacity: 1;
-  border-bottom: 3px solid #555555;
+.no-border {
+  border: 0 !important;
 }
