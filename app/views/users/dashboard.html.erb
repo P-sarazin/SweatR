@@ -18,17 +18,17 @@
 <!------debut des différentes tabs------>
   <ul class="nav nav-tabs list-inline tabs-underlined" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active tab-underlined" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My sessions</a>
+      <a class="nav-link tab-underlined <%= 'active' unless params[:tab] == "metrics" %>" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My sessions</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-underlined" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My metrics</a>
+      <a class="nav-link tab-underlined <%= 'active' if params[:tab] == "metrics" %>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My metrics</a>
     </li>
     <li class="nav-item">
       <a class="nav-link tab-underlined" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">My account</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade <%= 'show active' unless params[:tab] == "metrics" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
   <!------DEBUT  des 2 cards contenant les Sessions------>
     <div class="dashboard-grid">
   <!------début card contenant les Sessions actuelles ------>
@@ -91,7 +91,7 @@
     </div>
   <!------FIN  des 2 cards contenant les Sessions------>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade <%= 'show active' if params[:tab] == "metrics" %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <!------debut des cards contenant les metrics------>
       <div class="dashboard-grid">
         <!------debut card contenant les performances------>
