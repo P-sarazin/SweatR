@@ -63,6 +63,21 @@
                     <% end %>
                   </div>
                 </div>
+                <div class="modal fade" id="reviewModalCenter" tabindex="-1" role="dialog" aria-labelledby="reviewModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="reviewModalLongTitle">How was your lesson?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= render "form", lesson: booking.lesson, booking: booking %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               <% end %>
               <% @previous_bookings.each do |booking| %>
                   <div class="main-card-product previous">
@@ -70,6 +85,26 @@
                       <%= image_tag booking.lesson.lesson_picture, class: "avatar" %>
                       <div class="main-card-product-infos">
                         <strong><%= booking.lesson.name.capitalize %> with <%= booking.lesson.coach.name.capitalize %></strong><br/> <%= booking.lesson.appointment.strftime('%A %d %b %H') %>H00
+                      </div>
+                    </div>
+                    <div class="leave-review">
+                      <button type="button" class="btn-gradient" data-toggle="modal" data-target="#reviewModalCenter">
+                      Update my review
+                      </button>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="reviewModalCenter" tabindex="-1" role="dialog" aria-labelledby="reviewModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="reviewModalLongTitle">How was your lesson?</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <%= render "form", lesson: booking.lesson, booking: booking %>
+                        </div>
                       </div>
                     </div>
                   </div>
