@@ -20,7 +20,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body">
-            <span class="modal-close" data-dismiss="modal">&times;</span>
+            <span class="modal-close cursor-pointer" data-dismiss="modal">&times;</span>
             <h3><strong> <%= lesson.name.capitalize %> </strong></h3>
               <div class="modal-picture">
                 <%= cl_image_tag lesson.lesson_picture %>
@@ -37,7 +37,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body">
-            <span class="modal-close" data-dismiss="modal">&times;</span>
+            <span class="modal-close cursor-pointer" data-dismiss="modal">&times;</span>
             <h3><strong> <%= lesson.coach.name.capitalize %> </strong></h3>
             <div class="modal-description">
               <div class="modal-picture-coach">
