@@ -31,7 +31,7 @@ relaxation = Specialty.create!({ name: 'Relaxation' })
 puts "Creating users..."
 
 #user
-axel = User.create!(name: 'Axel', email: "axel@gmail.com", password: "Axel!!", avatar_picture: "https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/axel.png")
+axel = User.create!(name: 'David', email: "axel@gmail.com", password: "Axel!!", avatar_picture: "https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/axel.png")
 josephine = User.create!(name: 'Joséphine', email: "josephine@gmail.com", password: "Josephine!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589896478/DAMIDHOME/Avatar/josephine.png")
 pierre = User.create!(name: 'Pierre', email: "pierre@gmail.com", password: "Pierre!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/pierre.png")
 marie = User.create!(name: 'Marie', email: "marie@gmail.com", password: "Marie!!", avatar_picture:"https://res.cloudinary.com/dlevfhxyn/image/upload/v1589893760/DAMIDHOME/Avatar/marie.png")

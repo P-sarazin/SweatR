@@ -38,5 +38,6 @@ class LessonsController < ApplicationController
 
   def set_lesson
     @lesson = Lesson.find(params[:id])
+    @user = current_user
   end
 end

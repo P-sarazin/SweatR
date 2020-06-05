@@ -25,5 +25,7 @@
   list-style: none;
   margin-left: 0px;
   margin-bottom: 0px;
-  color: black;
+  a.nav-link {
+    color: $gray;
+  }
 }
