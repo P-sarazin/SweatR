@@ -9,6 +9,6 @@ class User < ApplicationRecord
   has_many :bookings
 
   def set_default_avatar
-    self.avatar_picture = image_tag("default_avatar.png")
+    self.avatar_picture = ActionController::Base.helpers.asset_path("default_avatar.png")
   end
 end
