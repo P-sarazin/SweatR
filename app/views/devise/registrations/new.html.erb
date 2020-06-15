@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pt-3">
   <h2>Sign up</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: 'btn-ghost' %>
+      <%= f.button :submit, "Sign up", class: 'btn-secondary mb-2' %>
     </div>
   <% end %>
 
