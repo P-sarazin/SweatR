@@ -9,7 +9,7 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         <% end %>
           <div class="main-card-product-infos">
-              <p> Hey <strong><%= current_user.name %> </strong>!  </p>
+              <p> Hey <strong><%= current_user.name.capitalize %> </strong>!  </p>
               <h8> Here you'll find all your metrics and informations about your sessions!</h8>
           </div>
         </div>

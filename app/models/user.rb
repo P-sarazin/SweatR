@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :bookings
 
   def set_default_avatar
-    self.avatar_picture = ActionController::Base.helpers.asset_path("default_avatar.png")
+    self.avatar_picture = ActionController::Base.helpers.asset_path("default_avatar.png") if self.avatar_picture.nil?
+    self.name = self.email.split('@')[0]
   end
 end
